@@ -483,20 +483,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../fly.io/migrate/" class="md-nav__link">
-        Migrate Heroku to Fly.io
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../northflank/new_user/" class="md-nav__link">
         Northflank
       </a>
@@ -590,6 +576,34 @@
         <li class="md-nav__item">
   <a href="#step-1-create-a-github-account" class="md-nav__link">
     Step 1: Create a GitHub account
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-create-a-droplet" class="md-nav__link">
+    Step 2 - Create a Droplet
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-install-mongodb" class="md-nav__link">
+    Step 3 - Install MongoDB
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-create-a-new-database" class="md-nav__link">
+    Step 4 - Create a new database
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-install-nightscout" class="md-nav__link">
+    Step 5 - Install Nightscout
   </a>
   
 </li>
@@ -1200,6 +1214,34 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#step-2-create-a-droplet" class="md-nav__link">
+    Step 2 - Create a Droplet
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-install-mongodb" class="md-nav__link">
+    Step 3 - Install MongoDB
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-create-a-new-database" class="md-nav__link">
+    Step 4 - Create a new database
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-install-nightscout" class="md-nav__link">
+    Step 5 - Install Nightscout
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1231,6 +1273,196 @@ You can test this solution for free for 2 months.  </p>
 <p>If you already have a GitHub account, <a href="../../../nightscout/github/#update-your-nightscout-fork">update</a> your Nightscout project.</p>
 <p>If you don't have a GitHub account <a href="../../../nightscout/github/#create-a-github-account">create one</a> then <a href="../../../nightscout/github/#fork-the-nightscout-project">fork the Nightscout project</a> and come back.</p>
 <p></br></p>
+<h3 id="step-2-create-a-droplet">Step 2 - Create a Droplet<a class="headerlink" href="#step-2-create-a-droplet" title="Permanent link">⌁</a></h3>
+<p>a) Sign up at <a href="https://www.digitalocean.com/">DigitalOcean</a> and <code>Sign up with GitHub</code>.</p>
+<p><img src="../img/DO01.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>b) Authorize DigitalOcean to access GitHub information.</p>
+<p><img src="../img/DO02.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>c) Select <code>Deploy a virtual machine</code>.</p>
+<p><img src="../img/DO03.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>d) Select <code>Ubuntu 20.04 (TLS) x64</code> using the drop down menu.</p>
+<p><img src="../img/DO04.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>e) Select <code>SHARED CPU</code> <code>Basic</code> in <code>Choose a plan</code>.</p>
+<p><img src="../img/DO05.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>f) Change your Droplet plan to a <code>$4 Droplet</code>.<br />
+You can modify this later but you can't select anything cheaper than this first choice.</p>
+<p><img src="../img/DO06.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>g) Choose a datacenter close to where you live.</p>
+<p><img src="../img/DO24.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>h) It is strongly recommended that you select <code>SSH Key</code> to have a secure login.<br />
+If you're not technical enough you will probably want to use a standard <code>root</code> password. If you decide to do so, make sure it's highly complex and change it regularly to avoid your site being hacked.</p>
+<p><img src="../img/DO07.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>g) Scroll down and click <code>Create</code>.</p>
+<p><img src="../img/DO09.png" style="zoom:80%;" /></p>
+<p>Wait until your droplet finishes initialization.</p>
+<p></br></p>
+<p>h) You need to confirm your identity with a credit card or with PayPal.<br />
+If you selected a credit card, 5$ will be booked on it: not withdrawn.</p>
+<p><img src="../img/DO08.png" style="zoom:80%;" /></p>
+<p>You now have 100$ to spend for free for the next 60 days.</p>
+<p></br></p>
+<p></br></p>
+<h3 id="step-3-install-mongodb">Step 3 - Install MongoDB<a class="headerlink" href="#step-3-install-mongodb" title="Permanent link">⌁</a></h3>
+<p>a) Select twice your new droplet to open the view you see below, in <code>Access</code>, select  <code>Launch Droplet Console</code>.</p>
+<p><img src="../img/DO11.png" style="zoom:80%;" /></p>
+<p>A terminal window will open.</p>
+<p><img src="../img/DO12.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>b) Update your Ubuntu system (this is a command you should type every 3 or 6 months to keep it updated).<br />
+Enter the following command:</p>
+<pre><code class="bash">sudo apt-get update &amp;&amp; apt-get upgrade -y
+</code></pre>
+
+<p><img src="../img/DO13.png" style="zoom:80%;" /></p>
+<p>You will see it's completed when the terminal stops scrolling text and you're returned to the prompt. Something like this:</p>
+<p><img src="../img/DO14.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>c) Install MongoDB entering the following command:</p>
+<pre><code class="bash">sudo apt install mongodb -y
+</code></pre>
+
+<p>Wait until it completes.</p>
+<p></br></p>
+<p>d) Enter in Mongo shell with the following command:</p>
+<pre><code class="bash">mongo --port 27017
+</code></pre>
+
+<p><img src="../img/DO15.png" style="zoom:80%;" /></p>
+<p>You will know you've entered the shell when the prompt is displayed: you will see <code>&gt;</code>.</p>
+<p>Enter</p>
+<pre><code>use admin
+</code></pre>
+
+<p><img src="../img/DO16.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>e) We will create an admin user. Decide on a name and a password.<br />
+Avoid reusing other usernames and passwords.
+In the example below the user is <code>john_dbadmin</code> and the password <code>5t1ll5053cr3t!</code>.<br />
+Do NOT use these examples for your database!</p>
+<p>Now enter the user creation instruction. It will be made like this:<br />
+<strong>BUT</strong> you need to <strong>replace</strong> <code>ADMIN_NAME</code> and <code>ADMIN_PASSWORD</code> with those you decided above!</p>
+<pre><code class="bash">db.createUser({user: &quot;ADMIN_NAME&quot;, pwd: &quot;ADMIN_PASSWORD&quot;, roles: [ { role: &quot;userAdminAnyDatabase&quot;, db: &quot;admin&quot; }] })
+</code></pre>
+
+<p>Which gives for example:</p>
+<p><img src="../img/DO17.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>f) Exit the shell entering:</p>
+<pre><code class="bash">exit
+</code></pre>
+
+<p>Mongo will answer <code>bye</code> and you'll be back to Ubuntu's command prompt.</p>
+<p></br></p>
+<p>g) Edit your Mongo configuration typing:</p>
+<pre><code class="bash">sudo nano /etc/mongodb.conf
+</code></pre>
+
+<p>Nano text editor will open. Yes, that's the easiest way to edit text files in Linux. Don't complain else I'll make you use <a href="http://www.viemu.com/a-why-vi-vim.html">vi</a>.</p>
+<p><img src="../img/DO18.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>h) Using your keyboard arrows (no, your mouse doesn't work here), go down until you're on the line reading  <code>#auth = true</code> and remove the  <code>#</code>. 
+<img src="../img/DO19.png" style="zoom:80%;" /></p>
+<p>The line should now read:</p>
+<p><img src="../img/DO20.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>i) Save the modified file:</p>
+<ol>
+<li>Press <code>Ctrl-O</code>    (the letter O not zero)</li>
+<li>Press <code>Enter</code></li>
+<li>Press <code>Ctrl-X</code></li>
+</ol>
+<p>You can return to step <strong>g.</strong> above if you want to check it's been modified correctly.</p>
+<p></br></p>
+<p>Good. Now you know how to use Nano.</p>
+<p></br></p>
+<p>j) Restart Mongo with this command:</p>
+<pre><code class="bash">sudo service mongodb restart
+</code></pre>
+
+<p>Nothing special will display. You will return to the command prompt immediately.</p>
+<p></br></p>
+<p>You have installed the MongoDB application in your droplet.</p>
+<p></br></p>
+<h3 id="step-4-create-a-new-database">Step 4 - Create a new database<a class="headerlink" href="#step-4-create-a-new-database" title="Permanent link">⌁</a></h3>
+<p>a) Login into Mongo as an admin typing this command:<br />
+<strong>BUT</strong> you need to <strong>replace</strong> <code>ADMIN_NAME</code> with your own database administrator name, the one you decided above in <strong>Step 3.e.</strong></p>
+<pre><code class="bash">mongo -u ADMIN_NAME -p --authenticationDatabase admin
+</code></pre>
+
+<p>You will be asked to enter the password matching your admin user (still that one defined in <strong>Step 3.e</strong>.).</p>
+<p>This is the example continued, don't use <code>john_dbadmin</code> in your case: use your own.</p>
+<p><img src="../img/DO21.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>b) Now you need to create a database name.<br />
+Make it simple (letters), this is just the place your Nightscout data will be stored.<br />
+Type this command:<br />
+<strong>BUT</strong> you need to <strong>replace</strong> <code>MONGO_NS_DB</code> with your own database name.</p>
+<pre><code class="bash">use MONGO_NS_DB
+</code></pre>
+
+<p>In the example below the database name is <code>NS-DB</code>.</p>
+<p><img src="../img/DO22.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>c) Then you need to create a database user. It's not the same than the Mongo user.<br />
+Invent a name (letters and numbers) and a password (letters and numbers, uppercase and lowercase).</p>
+<p>Type this command:<br />
+<strong>BUT</strong> you need to <strong>replace</strong> <code>MONGO_NS_USER</code> with your database user name, <code>MONGO_NS_PASSWORD</code> with its matching password and <code>MONGO_NS_DB</code> with the database name you created above.</p>
+<pre><code class="bash">db.createUser({user: &quot;MONGO_NS_USER&quot;, pwd: &quot;MONGO_NS_PASSWORD&quot;, roles: [ { role: &quot;readWrite&quot;, db: &quot;MONGO_NS_DB&quot; }]})
+</code></pre>
+
+<p>In the example below the database username is <code>john_nightscout</code>, the password is <code>Nightscout19800416</code> and database still <code>NS-DB</code>.</p>
+<p><img src="../img/DO23.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>d) Check you can login into Mongo with this user typing this command:<br />
+<strong>BUT</strong> you need to <strong>replace</strong> <code>MONGO_NS_USER</code> with your own database administrator name, and replace <code>MONGO_NS_DB</code> with your own database name. The ones you decided above in <strong>Step 3.c.</strong></p>
+<pre><code class="bash">mongo -u MONGO_NS_USER -p --authenticationDatabase MONGO_NS_DB
+</code></pre>
+
+<p>You will be asked to enter the password matching your user (the one defined in <strong>Step 3.c</strong>.).</p>
+<p>This is the example continued, don't use <code>john_nightscout</code>: use your own.</p>
+<p><img src="../img/DO21.png" style="zoom:80%;" /></p>
+<p>e) Exit the shell entering:</p>
+<pre><code class="bash">exit
+</code></pre>
+
+<p>Mongo will answer <code>bye</code> and you'll be back to Ubuntu's command prompt.</p>
+<p></br></p>
+<p>You have created your Nightscout MongoDB database and its user.</p>
+<p></br></p>
+<h3 id="step-5-install-nightscout">Step 5 - Install Nightscout<a class="headerlink" href="#step-5-install-nightscout" title="Permanent link">⌁</a></h3>
+<p>a) Create a new user.<br />
+You are now running Ubunto with highest privilege. Don't try to run nightscout as root user, it will not work.<br />
+<strong>Replace <code>mainuser</code></strong> with a name of your choice, like your name, only lowercase letters.</p>
+<pre><code class="bash">sudo adduser mainuser
+</code></pre>
+
+<p>In the example below, the user name is <code>john</code>.</p>
+<p><img src="../img/DO25.png" style="zoom:80%;" /></p>
+<p>You need to invent a password for your new user.<br />
+Confirm it then just hit <code>Enter</code> for the following lines, when done key <code>Y</code> then <code>Enter</code>.</p>
+<p><img src="../img/DO26.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>b) Make your user an administrator.<br />
+Type the following command:</p>
+<p><strong>Replace <code>mainuser</code></strong> with your new user name.</p>
+<pre><code class="bash">sudo usermod -aG sudo mainuser
+</code></pre>
+
+<p><img src="../img/DO27.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>c) Login to the machine using the account we just created.<br />
+Type the following command:</p>
+<p><strong>Replace <code>mainuser</code></strong> with your new user name.</p>
+<pre><code>ssh mainuser@IP-number
+</code></pre>
                 
               
               
