@@ -538,6 +538,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../railway.app/migration/" class="md-nav__link">
+        Migration to Railway
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../fly.io/new_user/" class="md-nav__link">
         Fly.io
       </a>
@@ -1260,8 +1274,9 @@
 <div class="admonition info">
 <p class="admonition-title">Database limitations</p>
 <p>You will use a <a href="https://www.mongodb.com/pricing#mdb-modal-shared">free M0 cluster for your Atlas database</a> from MongoDB, its size is limited to 512MB.<br />
-Should MongoDB remove its free shared clusters offer, or should you need a larger database size, an <a href="https://www.mongodb.com/docs/atlas/manage-clusters/#shared-clusters">M2 shared cluster</a> will increase your cost of 9$ per month.</p>
+You will eventually need to perform <a href="../../../nightscout/admin_tools/#database-maintenance">cleanup</a>, make sure you add <a href="../../../nightscout/setup_variables/#dbsize-database-size"><code>dbsize</code></a> in <code>enable</code> to avoid unexpected Nightscout failure. You can increase database size with an <a href="https://www.mongodb.com/docs/atlas/manage-clusters/#shared-clusters">M2 shared cluster</a> the additional cost is 9$ per month. </p>
 </div>
+<p><span style="font-size:larger;">Consider <a href="/#nightscout-as-a-service">Nightscout as a service</a> as an option.</span></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>MongoDB Atlas regularly changes the site aspect. If you encounter a page not matching this documentation search for keywords like <code>not now</code>, <code>skip</code> or <code>later</code> to continue. Report discrepancies <a href="https://github.com/nightscout/nightscout.github.io/issues/new">here</a>.</p>

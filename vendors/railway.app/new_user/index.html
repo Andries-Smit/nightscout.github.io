@@ -633,6 +633,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../migration/" class="md-nav__link">
+        Migration to Railway
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../fly.io/new_user/" class="md-nav__link">
         Fly.io
       </a>
@@ -1450,17 +1464,17 @@
 <div class="admonition info">
 <p class="admonition-title">Cost</p>
 <p><a href="https://railway.app/">Railway.app</a> offers 500 free hours of execution usage per month for the <a href="https://docs.railway.app/reference/plans#starter-plan">Starter plan</a> <strong>this is not enough to cover a full month</strong>. Running multiple free accounts to override this limitation is <a href="https://railway.app/legal/fair-use">not acceptable</a>.<br />
-<img src="../img/RailwayFree.png" style="zoom:80%;" /><br />
-<strong>You probably can use Railway for free subscribing to a <a href="https://railway.app/pricing">Developer plan</a></strong>.<br />
-Monitor the first free 500 hours to understand how much you might be charged for a Developer plan. If your site stops after 500 hours with more than 1.56$ credit, this mean you can run Nightscout for free.  </p>
+<img src="../img/RailwayFree.png" style="zoom:80%;" />  </p>
+<p><strong>You can use Railway for free subscribing to a <a href="https://railway.app/pricing">Developer plan</a></strong>.</p>
 </div>
+<p>Keep in mind a free M0 MongoDB Atlas database size is limited to 512MB and you will eventually need to perform <a href="../../../nightscout/admin_tools/#database-maintenance">cleanup</a>, make sure you add <a href="../../../nightscout/setup_variables/#dbsize-database-size"><code>dbsize</code></a> in <code>enable</code> to avoid unexpected Nightscout failure. You can increase database size with an <a href="https://www.mongodb.com/docs/atlas/manage-clusters/#shared-clusters">M2 shared cluster</a> the additional cost is 9$ per month.   </p>
 <div class="admonition warning">
 <p class="admonition-title">Database</p>
-<p>Adding a database to your Railway account might increase costs.<br />
-The Developer plan offers Max 100 GB of Disk (Soft cap) but mind the cost $0.000231 / GB / Minute will quickly reach 5$ for a 512MB database. </p>
+<p>Adding a MongoDB database to your Railway account might increase costs.<br />
+The Developer plan offers Max 100 GB of Disk (Soft cap) but mind the cost $0.000231 / GB / Minute will quickly reach 5$ for a 512MB database.</p>
 </div>
 <p></br></p>
-<p>Consider <a href="/#nightscout-as-a-service">Nightscout as a service</a> as an option.</p>
+<p><span style="font-size:larger;">Consider <a href="/#nightscout-as-a-service">Nightscout as a service</a> as an option.</span></p>
 <p></br></p>
 <h2 id="set-up-a-new-nightscout">Set up a new Nightscout<a class="headerlink" href="#set-up-a-new-nightscout" title="Permanent link">⌁</a></h2>
 <h3 id="create-your-railway-and-github-accounts-from-a-computer">Create your Railway and GitHub accounts from a computer.<a class="headerlink" href="#create-your-railway-and-github-accounts-from-a-computer" title="Permanent link">⌁</a></h3>
@@ -1499,7 +1513,7 @@ If you have unexpected issues when creating your site, restart with another brow
 If it still shows 200 hours, refresh your browser page.</p>
 <p><img src="../img/Railway06a.png" style="zoom:80%;" /></p>
 <p></br></p>
-<p>g) If you need to use Nightscout for more than 500 hours per month you need to update your account to a Developer plan. Click on the <code>Starter Plan</code> information and select <code>Remove Resource Limits</code>.</p>
+<p>g) If you need to use Nightscout for more than 500 hours per month you need to upgrade your account to a Developer plan. Click on the <code>Starter Plan</code> information and select <code>Remove Resource Limits</code>.</p>
 <p><img src="../img/Railway06b.png" style="zoom:80%;" /></p>
 <p></br></p>
 <p>Enter your credit card information and select <code>Subscribe to a Developer Plan</code>.</p>
@@ -1859,13 +1873,13 @@ If deploy fails, check your modifications...</p>
       
       
         
-        <a href="../../fly.io/new_user/" class="md-footer__link md-footer__link--next" aria-label="Next: Fly.io" rel="next">
+        <a href="../migration/" class="md-footer__link md-footer__link--next" aria-label="Next: Migration to Railway" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Fly.io
+              Migration to Railway
             </div>
           </div>
           <div class="md-footer__button md-icon">

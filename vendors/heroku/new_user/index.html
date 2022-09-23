@@ -566,6 +566,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../railway.app/migration/" class="md-nav__link">
+        Migration to Railway
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../fly.io/new_user/" class="md-nav__link">
         Fly.io
       </a>
@@ -1315,8 +1329,9 @@
 <div class="admonition info">
 <p class="admonition-title">Cost</p>
 <p>You can deploy your Nightscout site with Heroku using a <a href="https://www.heroku.com/pricing">Hobby plan (7$ per month per app)</a>.<br />
-Consider <a href="/#nightscout-as-a-service">Nightscout as a service</a> as an option.</p>
+Keep in mind the MongoDB database size is limited to 512MB and you will eventually need to perform <a href="../../../nightscout/admin_tools/#database-maintenance">cleanup</a>, make sure you add <a href="../../../nightscout/setup_variables/#dbsize-database-size"><code>dbsize</code></a> in <code>enable</code> to avoid unexpected Nightscout failure. You can increase database size with an <a href="https://www.mongodb.com/docs/atlas/manage-clusters/#shared-clusters">M2 shared cluster</a> the additional cost is 9$ per month.</p>
 </div>
+<p><span style="font-size:larger;">Consider <a href="/#nightscout-as-a-service">Nightscout as a service</a> as an option.</span></p>
 <p></br></p>
 <hr />
 <h3 id="create-your-heroku-github-and-atlas-accounts-from-a-computer">Create your Heroku, GitHub and Atlas accounts from a computer.<a class="headerlink" href="#create-your-heroku-github-and-atlas-accounts-from-a-computer" title="Permanent link">⌁</a></h3>

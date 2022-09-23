@@ -14,7 +14,7 @@
     
     
       
-        <title>MVPS - Nightscout</title>
+        <title>Migration to Railway - Nightscout</title>
       
     
     
@@ -66,6 +66,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#migrate-from-heroku-to-railwayapp" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -95,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              MVPS
+              Migration to Railway
             
           </span>
         </div>
@@ -450,7 +455,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../railway.app/new_user/" class="md-nav__link">
+      <a href="../new_user/" class="md-nav__link">
         Railway.app
       </a>
     </li>
@@ -462,11 +467,81 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../railway.app/migration/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Migration to Railway
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Migration to Railway
       </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-update-your-github-repository" class="md-nav__link">
+    Step 1 - Update your Github repository
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-create-a-railway-account" class="md-nav__link">
+    Step 2 - Create a Railway account
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-log-into-heroku" class="md-nav__link">
+    Step 3 - Log into Heroku
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-deploy-nightscout-in-railway" class="md-nav__link">
+    Step 4 - Deploy Nightscout in Railway
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-update-your-uploaders-and-downloaders" class="md-nav__link">
+    Step 5 - Update your uploaders and downloaders
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -532,19 +607,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../MVPS/new_user/" class="md-nav__link">
         MVPS
       </a>
-      
     </li>
   
 
@@ -1134,16 +1201,204 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-update-your-github-repository" class="md-nav__link">
+    Step 1 - Update your Github repository
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-create-a-railway-account" class="md-nav__link">
+    Step 2 - Create a Railway account
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-log-into-heroku" class="md-nav__link">
+    Step 3 - Log into Heroku
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-deploy-nightscout-in-railway" class="md-nav__link">
+    Step 4 - Deploy Nightscout in Railway
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-update-your-uploaders-and-downloaders" class="md-nav__link">
+    Step 5 - Update your uploaders and downloaders
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
                 
                 
-                  <h1>MVPS</h1>
-                
-                <p>Coming soon</p>
-<p><a href="https://gist.github.com/DrCR77/eb08b830d4f31092cf65a8a9976dc0a6">https://gist.github.com/DrCR77/eb08b830d4f31092cf65a8a9976dc0a6</a></p>
+                <h1 id="migrate-from-heroku-to-railwayapp">Migrate from Heroku to Railway.app<a class="headerlink" href="#migrate-from-heroku-to-railwayapp" title="Permanent link">⌁</a></h1>
+<hr />
+<p><span style="font-size:smaller;"><strong>APPLIES TO:</strong></span>  <img src="../../img/heroku.png" style="zoom:80%;" /> + <img src="../../img/atlas.png" style="zoom:80%;" />  ⟹   <img src="../../img/railway-app-logo.png" style="zoom:80%;" /> + <img src="../../img/atlas.png" style="zoom:80%;" /></p>
+<hr />
+<div class="admonition info">
+<p class="admonition-title">Cost</p>
+<p><a href="https://railway.app/">Railway.app</a> offers 500 free hours of execution usage per month for the <a href="https://docs.railway.app/reference/plans#starter-plan">Starter plan</a> <strong>this is not enough to cover a full month</strong>. Running multiple free accounts to override this limitation is <a href="https://railway.app/legal/fair-use">not acceptable</a>.<br />
+<img src="../img/RailwayFree.png" style="zoom:80%;" />  </p>
+<p><strong>You can migrate from Heroku to Railway and keep your Nightscout site for free (maintaining your MongoDB Atlas database) by subscribing to a <a href="https://railway.app/pricing">Developer plan</a></strong>.</p>
+</div>
+<p>Keep in mind the free M0 MongoDB Atlas database size is limited to 512MB and you will eventually need to perform <a href="../../../nightscout/admin_tools/#database-maintenance">cleanup</a>, make sure you add <a href="../../../nightscout/setup_variables/#dbsize-database-size"><code>dbsize</code></a> in <code>enable</code> to avoid unexpected Nightscout failure. You can increase database size with an <a href="https://www.mongodb.com/docs/atlas/manage-clusters/#shared-clusters">M2 shared cluster</a>, the additional cost is 9$ per month.</p>
+<p><span style="font-size:larger;">Consider <a href="/#nightscout-as-a-service">Nightscout as a service</a> as an option.</span></p>
+<p></br></p>
+<h2 id="step-1-update-your-github-repository">Step 1 - Update your Github repository<a class="headerlink" href="#step-1-update-your-github-repository" title="Permanent link">⌁</a></h2>
+<p>a) Click here to log in at GitHub: <a href="https://github.com/login">https://github.com/login</a>.</p>
+<p>b) Enter your username or email and your password. Click <code>Sign in</code></p>
+<p><img src="../../../update/img/UpdateNS00.png" style="zoom:80%;" ></p>
+<p></br></p>
+<p>c) Select your own <code>cgm-remote-monitor</code> project (<strong>not <code>nightscout/cgm-remote-monitor</code></strong>)</p>
+<p><img src="../../../update/img/UpdateNS01.png" style="zoom:80%;" ></p>
+<p></br></p>
+<p>d) Your repository will open. If you see <code>This branch is xxx commits behind nightscout:master</code> you need to update.<br />
+If you see <code>This branch is up to date with nightscout:master</code>, leave the GitHub page opened and go directly to <a href="#step-2-create-a-railway-account">Step 2</a>.</p>
+<p>e) Select <code>Fetch upstream</code></p>
+<p><img src="../../../update/img/UpdateNS01a.png" style="zoom:80%;" ></p>
+<p></br></p>
+<p>f) Select <code>Fetch and merge</code></p>
+<p><img src="../../../update/img/UpdateNS01b.png" style="zoom:80%;" ></p>
+<p></br></p>
+<p>g) After a moment, your repository should display <code>This branch is up to date with nightscout:master</code></p>
+<p><img src="../../../update/img/UpdateNS01c.png" style="zoom:80%;" ></p>
+<p>If you ran into trouble upgrading (your branch is not up to date): <a href="../../../nightscout/github/#delete-your-own-fork-of-cgm-remote-monitor">delete</a> and <a href="../../../nightscout/github/#fork-the-nightscout-project">fork again</a> your <code>cgm-remote-monitor</code> repository.</p>
+<p>Leave the GitHub page opened.</p>
+<p></br></p>
+<h2 id="step-2-create-a-railway-account">Step 2 - Create a Railway account<a class="headerlink" href="#step-2-create-a-railway-account" title="Permanent link">⌁</a></h2>
+<p>a) Open <a href="https://railway.app">Railway</a> in a new browser tab and click <code>login</code>. Login with GitHub.</p>
+<p><img src="../img/Railway00.png" style="zoom:80%;" /></p>
+<p><img src="../img/Railway01.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>b) Select <code>Authorize Railway App</code>.</p>
+<p><img src="../img/Railway02.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>c) Click on <code>Please agree to the new terms to keep on using Railway</code>.</p>
+<p><img src="../img/Railway03.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>d) Scroll down and click <code>I agree with Railway's Terms of Service</code>.</p>
+<p><img src="../img/Railway04.png" style="zoom:60%;" /></p>
+<p></br></p>
+<p>e) Scroll down and click <code>I will not deploy any of that</code>.</p>
+<p><img src="../img/Railway05.png" style="zoom:60%;" /></p>
+<p></br></p>
+<p>f) You now need to upgrade your account to a Developer plan. Click on the <code>Starter Plan</code> information and select <code>Remove Resource Limits</code>.</p>
+<p><img src="../img/Railway06b.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>g) Enter your credit card information and select <code>Subscribe to a Developer Plan</code>.</p>
+<p><img src="../img/Railway06c.png" style="zoom:80%;" /></p>
+<p>Your card will be billed 1$ that will be refund immediately. Bank fees won't be refund.</p>
+<p></br></p>
+<h2 id="step-3-log-into-heroku">Step 3 - Log into Heroku<a class="headerlink" href="#step-3-log-into-heroku" title="Permanent link">⌁</a></h2>
+<ul>
+<li>Log in Heroku <a href="https://id.heroku.com/login">https://id.heroku.com/login</a></li>
+</ul>
+<p><img src="../../../update/img/UpdateNS15.png" style="zoom:80%;" ></p>
+<ul>
+<li>Leave the Heroku page opened and return to the Railway page.</li>
+<li>If you cannot log into Heroku, follow the <a href="../new_user">new user guide</a> and reuse your existing Atlas database.</li>
+</ul>
+<p></br></p>
+<h2 id="step-4-deploy-nightscout-in-railway">Step 4 - Deploy Nightscout in Railway<a class="headerlink" href="#step-4-deploy-nightscout-in-railway" title="Permanent link">⌁</a></h2>
+<p>a) Click on <code>Create a New project</code>.</p>
+<p><img src="../img/Railway06.png" style="zoom:80%;" /></p>
+<p>If you don't see that, top right, click <code>+ New Project</code>.</p>
+<p><img src="../img/RailwayDB01.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>b) Select <code>Deploy from GitHub repo</code>.</p>
+<p><img src="../img/RailwayM19.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>c) Select <code>Configure GitHub App</code>.</p>
+<p><img src="../img/RailwayM02.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>d) Choose <code>Only select repositories</code>, in the <code>Select repositories</code> drop-down select your own fork of <code>cgm-remote-monitor</code>.<br />
+Then, at the bottom, click <code>Install &amp; Authorize</code>.</p>
+<p><img src="../img/Railway08.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>e) You should be back to <code>Deploy from GitHub repo</code>, select it.</p>
+<p><img src="../img/RailwayM19.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>f) Now you can select your own GitHub repository.</p>
+<p><img src="../img/RailwayM03.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>g) Select <code>Add variables</code>.</p>
+<p><img src="../img/RailwayM20.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>h) The Nightscout project will deploy in the background, just ignore it: now we need to import all variables from Heroku.<br />
+When you see this, press simultaneously the keys <code>Ctrl</code> and <code>K</code>.</p>
+<p><img src="../img/RailwayM21.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>i) Select <code>Import variables from Heroku</code>.</p>
+<p><img src="../img/RailwayM22.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>j) Click <code>Connect Heroku account</code>.</p>
+<p><img src="../img/RailwayM23.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>k) Click <code>Allow</code>.</p>
+<p><img src="../img/RailwayM24.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>l) Redo <code>Ctrl-K</code> and select <code>Import variables from Heroku</code>. Now you can select your Nightscout app.</p>
+<p><img src="../img/RailwayM25.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>m) Wait until import completes.<br />
+Your site will redeploy, wait until redeploy completes.</p>
+<p></br></p>
+<p>Congratulations. You migrated from Heroku to Railway.</p>
+<p></br></p>
+<p>n) You can see your new Nightscout site name in the deployment tab of your project. Click on the name to open Nightscout.<br />
+Click on the link to open it.</p>
+<div class="admonition info">
+<p class="admonition-title">Railway site name</p>
+<p>You can <a href="#change-your-railway-nightscout-site-name">change your Railway site name</a> in order to make it easier to remember. <strong>Recommended</strong>. You will do this later, before setting your uploaders.</p>
+</div>
+<p><img src="../img/RailwayM14.png" style="zoom:80%;" /></p>
+<p></br></p>
+<h2 id="step-5-update-your-uploaders-and-downloaders">Step 5 - Update your uploaders and downloaders<a class="headerlink" href="#step-5-update-your-uploaders-and-downloaders" title="Permanent link">⌁</a></h2>
+<p>Now you will need to update all the devices connected to Nightscout with the new web address.</p>
+<div class="admonition warning">
+<p class="admonition-title">Change the URL!</p>
+<p>Note that Railway will display he same information than Heroku even if you don't do so, but this will stop when Heroku will shutdown the free service.<br />
+<strong>Make sure you update the <a href="../../../uploader/setup/">uploader</a> and <a href="../../../nightscout/downloaders/">follower</a> devices with the new railway.app address!</strong></p>
+</div>
+<p></br></p>
                 
               
               
@@ -1168,7 +1423,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../../google/new_user/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Google Cloud" rel="prev">
+        <a href="../new_user/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Railway.app" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1177,20 +1432,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Google Cloud
+              Railway.app
             </div>
           </div>
         </a>
       
       
         
-        <a href="../../digitalocean/new_user/" class="md-footer__link md-footer__link--next" aria-label="Next: Digital Ocean" rel="next">
+        <a href="../../fly.io/new_user/" class="md-footer__link md-footer__link--next" aria-label="Next: Fly.io" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Digital Ocean
+              Fly.io
             </div>
           </div>
           <div class="md-footer__button md-icon">
