@@ -453,8 +453,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../vendors/railway.app/new_user/" class="md-nav__link">
-        Railway.app
+      <a href="../../vendors/railway/new_user/" class="md-nav__link">
+        Railway
       </a>
     </li>
   
@@ -467,7 +467,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../vendors/railway.app/migration/" class="md-nav__link">
+      <a href="../../vendors/railway/migration/" class="md-nav__link">
         Migration to Railway
       </a>
     </li>
@@ -1353,8 +1353,8 @@
 <hr />
 <p><span style="font-size:smaller;"><strong>APPLIES TO:</strong></span> <img src="../../vendors/img/railway-app-logo.png" style="zoom:80%;" /></p>
 <p>Your <code>Nightscout URL</code> defined in Railway by your Web app name, as shown in your <a href="https://railway.app/dashboard">Dashboard</a>. It usually looks like: <code>https://yoursitename.up.railway.app</code></p>
-<p><img src="../../../vendors/railway.app/img/RailwayM14.png" style="zoom:80%;" /></p>
-<p>Your Nightscout password, is the <code>API_SECRET</code> variable you can find editing your Railway variables like <a href="../../../vendors/railway.app/new_user/#editing-variables-in-railway">this</a>.</p>
+<p><img src="../../../vendors/railway/img/RailwayM14.png" style="zoom:80%;" /></p>
+<p>Your Nightscout password, is the <code>API_SECRET</code> variable you can find editing your Railway variables like <a href="../../../vendors/railway/new_user/#editing-variables-in-railway">this</a>.</p>
 <hr />
 <p><span style="font-size:smaller;"><strong>APPLIES TO:</strong></span> <img src="../../vendors/img/T1Pal.png" style="zoom:80%;" /></p>
 <p>You will find the <code>Uploader url</code> and <code>Api Secret</code> required to configure your uploader <a href="https://www.t1pal.com/account/sites/my#Uploaders">here</a>.</p>
@@ -1375,7 +1375,7 @@ BRIDGE_PASSWORD
 BRIDGE_SERVER</code></p>
 <p><a href="../../vendors/heroku/new_user/#editing-config-vars-in-heroku">Edit in Heroku</a>:</p>
 <p><img src="../../nightscout/img/NewNS35.png" style="zoom:80%;" /></p>
-<p>Or <a href="../../vendors/railway.app/new_user/#editing-variables-in-railway">edit in Railway</a>.</p>
+<p>Or <a href="../../vendors/railway/new_user/#editing-variables-in-railway">edit in Railway</a>.</p>
 <p></br></p>
 <p>You need to add <code>bridge</code> in the <code>ENABLE</code> variable. Do not delete other entries, just add <code>bridge</code> after a space.</p>
 <p><img src="../../nightscout/img/NewNS38.png" style="zoom:80%;" /></p>
@@ -1396,9 +1396,9 @@ BRIDGE_SERVER</code></p>
 <p></br></p>
 <h2 id="medtronic-carelink">Medtronic CareLink<a class="headerlink" href="#medtronic-carelink" title="Permanent link">⌁</a></h2>
 <div class="admonition warning">
-<p class="admonition-title">This plugin is <strong>NOT</strong> functional anymore with Heroku.</p>
+<p class="admonition-title">The <code>mmconnect</code> plugin is <strong>NOT</strong> functional anymore with cloud Nightscout sites.</p>
 </div>
-<p>You can use an Android phone with a <a href="https://github.com/benceszasz/xDripCareLinkFollower">private version of xDrip+</a> (see also <a href="https://bigdigital.home.blog/category/xdrip/">here</a> for a customized version for smartbands), a <a href="https://github.com/FredMK/minimed-connect-to-nightscout-wrapper">computer</a> or a <a href="https://github.com/psonnera/minimed-connect-to-nightscout-wrapper/wiki">Raspberry Pi</a> to bridge CareLink to Nightscout.</p>
+<p>You can use an Android phone with a <a href="https://github.com/benceszasz/xDripCareLinkFollower">private version of xDrip+</a>. See <a href="../../uploader/setup/#xdrip">here</a> how to set it up.</p>
 <p>Plugin setup documented <a href="https://github.com/nightscout/cgm-remote-monitor/#mmconnect-minimed-connect-bridge">here</a> with <a href="https://github.com/nightscout/cgm-remote-monitor/#pump-pump-monitoring">additional fields</a> for your pump.</p>
 <p></br></p>
 <h2 id="medtronic-600-series-with-uploader"><a href="http://pazaan.github.io/600SeriesAndroidUploader/">Medtronic 600 Series with uploader</a><a class="headerlink" href="#medtronic-600-series-with-uploader" title="Permanent link">⌁</a></h2>
