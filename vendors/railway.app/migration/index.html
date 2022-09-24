@@ -1381,14 +1381,27 @@ When you see this, press simultaneously the keys <code>Ctrl</code> and <code>K</
 <p>m) Wait until import completes.<br />
 Your site will redeploy, wait until redeploy completes.</p>
 <p></br></p>
-<p>Congratulations. You migrated from Heroku to Railway.</p>
+<p>n) Change your site name (you need to keep the <code>.up.railway.app</code> domain).</p>
+<ol>
+<li>
+<p>Select your Nightscout app</p>
+</li>
+<li>
+<p>Go in <code>Settings</code></p>
+</li>
+<li>
+<p>In <code>Domains</code> go to the end of line and click the edit icon</p>
+</li>
+<li>
+<p>Write your new name and check it's available</p>
+</li>
+</ol>
+<p>Click <code>Update</code></p>
+<p>Your Nightscout URL will now be <code>https://</code><em>yoursitename</em><code>.up.railway.app</code></p>
+<p><img src="../img/Railway38.png" style="zoom:80%;" /></p>
 <p></br></p>
-<p>n) You can see your new Nightscout site name in the deployment tab of your project. Click on the name to open Nightscout.<br />
-Click on the link to open it.</p>
-<div class="admonition info">
-<p class="admonition-title">Railway site name</p>
-<p>You can <a href="#change-your-railway-nightscout-site-name">change your Railway site name</a> in order to make it easier to remember. <strong>Recommended</strong>. You will do this later, before setting your uploaders.</p>
-</div>
+<p>Congratulations. You migrated from Heroku to Railway.</p>
+<p>Click the site name to open Nightscout.</p>
 <p><img src="../img/RailwayM14.png" style="zoom:80%;" /></p>
 <p></br></p>
 <h2 id="step-5-update-your-uploaders-and-downloaders">Step 5 - Update your uploaders and downloaders<a class="headerlink" href="#step-5-update-your-uploaders-and-downloaders" title="Permanent link">⌁</a></h2>
@@ -1398,6 +1411,10 @@ Click on the link to open it.</p>
 <p>Note that Railway will display he same information than Heroku even if you don't do so, but this will stop when Heroku will shutdown the free service.<br />
 <strong>Make sure you update the <a href="../../../uploader/setup/">uploader</a> and <a href="../../../nightscout/downloaders/">follower</a> devices with the new railway.app address!</strong></p>
 </div>
+<p></br></p>
+<p>To fully test your new Railway Nightscout app: put your Heroku app in <a href="../../../troubleshoot/heroku/#maintenance-mode">maintenance mode</a>.<br />
+If things don't go as expected, you can disable it and return to Heroku whilst you fix it.<br />
+<strong>Better test it now than once Heroku will shutdown your app.</strong></p>
 <p></br></p>
                 
               
