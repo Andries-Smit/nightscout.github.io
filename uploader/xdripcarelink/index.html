@@ -14,7 +14,7 @@
     
     
       
-        <title>Index - Nightscout</title>
+        <title>xDrip+ CareLink bridge - Nightscout</title>
       
     
     
@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#bootstrap" class="md-skip">
+        <a href="#xdrip-for-carelink" class="md-skip">
           Skip to content
         </a>
       
@@ -100,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Index
+              xDrip+ CareLink bridge
             
           </span>
         </div>
@@ -189,13 +189,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../nightscout/setup_variables/" class="md-tabs__link">
+      <a href="../../nightscout/setup_variables/" class="md-tabs__link md-tabs__link--active">
         Configure
       </a>
     </li>
@@ -347,7 +349,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../uploader/uploaders/" class="md-nav__link">
+      <a href="../uploaders/" class="md-nav__link">
         How do I upload my data?
       </a>
     </li>
@@ -611,12 +613,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
       
       
@@ -653,7 +657,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../uploader/setup/" class="md-nav__link">
+      <a href="../setup/" class="md-nav__link">
         Configure your Uploader
       </a>
     </li>
@@ -665,11 +669,21 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../uploader/xdripcarelink/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         xDrip+ CareLink bridge
       </a>
+      
     </li>
   
 
@@ -1155,21 +1169,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#package-managers" class="md-nav__link">
-    Package Managers
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1181,17 +1180,21 @@
               
                 
                 
-                <h1 id="bootstrap">Bootstrap<a class="headerlink" href="#bootstrap" title="Permanent link">⌁</a></h1>
-<p>Shim repository for <a href="http://getbootstrap.com">Bootstrap</a>.</p>
-<p>This package just provides the basic Bootstrap JavaScript in the package. This
-means that although the stylesheets are there, you will be required to provide
-your own means of including the styles.</p>
-<h2 id="package-managers">Package Managers<a class="headerlink" href="#package-managers" title="Permanent link">⌁</a></h2>
-<ul>
-<li><a href="http://twitter.github.com/bower/">Bower</a>: <code>components-bootstrap</code></li>
-<li><a href="https://github.com/component/component">Component</a>: <code>components/bootstrap</code></li>
-<li><a href="http://packagist.org/packages/components/bootstrap">Composer</a>: <code>components/bootstrap</code></li>
-</ul>
+                <h1 id="xdrip-for-carelink">xDrip+ for CareLink<a class="headerlink" href="#xdrip-for-carelink" title="Permanent link">⌁</a></h1>
+<p>Since the <code>mmconnect</code> plugin is not functional anymore, the best solution to upload automatically your data from CareLink to Nightscout is to use the forked version of xDrip+ from Bence.</p>
+<p></br></p>
+<p>You need an Android device to act as a bridge from CareLink to Nightscout.<br />
+It can be either the phone you use with the CareLink app, or any other phone or tablet connected to the internet. You don't need to carry it with you. It only needs to be switched on and connected.</p>
+<p>There will be a delay between your pump readings and xDrip+/Nightscout. This is due to various polling times and should be less than 10 minutes.</p>
+<p></br></p>
+<p>Download the forked version from <strong><a href="https://github.com/benceszasz/xDripCareLinkFollower/releases">here</a></strong> (use the latest release, download <code>xdrip-carelink.apk</code>).<br />
+Do not use the official xDrip+ release as it doesn't include this feature yet.</p>
+<p>Once downloaded install xDrip+ (you can find information <a href="https://xdrip.readthedocs.io/en/latest/install/install/#enable-location">here</a>).</p>
+<p>Make sure you setup a Share Partner on your CareLink Connect app.</p>
+<p>Select the <a href="https://xdrip.readthedocs.io/en/latest/install/carelinkfollow/">CareLink follower</a> as the data source.</p>
+<p>Once you have data in xDrip+ you can upload them to Nightscout using Cloud Upload, <a href="https://xdrip.readthedocs.io/en/latest/use/cloud/#nightscout-sync-rest-api">Nightscout Sync</a>.</p>
+<p>Leave Download treatments disabled.</p>
+<p></br></p>
                 
               
               
@@ -1212,6 +1215,41 @@ your own means of including the styles.</p>
       
         
 <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../setup/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Configure your Uploader" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Configure your Uploader
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../nightscout/downloaders/" class="md-footer__link md-footer__link--next" aria-label="Next: Follower Devices" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Follower Devices
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

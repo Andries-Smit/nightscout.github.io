@@ -835,6 +835,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../uploader/xdripcarelink/" class="md-nav__link">
+        xDrip+ CareLink bridge
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../nightscout/downloaders/" class="md-nav__link">
         Follower Devices
       </a>
@@ -1490,14 +1504,14 @@ If you have unexpected issues when creating your site, restart with another brow
 <p class="admonition-title">Already have a GitHub account?</p>
 <p><a href="../../../nightscout/github/#delete-your-own-fork-of-cgm-remote-monitor">Delete the cgm-remote-monitor fork</a> from your GitHub (if present) before proceeding.</p>
 </div>
-<p>If you don't have a GitHub account <a href="../../../nightscout/github/#create-a-github-account">create one</a> and come back.</p>
+<p>If you don't have a GitHub account follow <a href="../../../nightscout/github/#create-a-github-account"><strong>this link</strong></a> to create one and come back.</p>
 <p></br></p>
 <h3 id="step-2-create-a-railway-account">Step 2: Create a Railway account<a class="headerlink" href="#step-2-create-a-railway-account" title="Permanent link">⌁</a></h3>
 <p>a) Open <a href="https://railway.app">Railway</a> in a new browser tab and click <code>login</code>. Login with GitHub.</p>
 <p><img src="../img/Railway00.png" style="zoom:80%;" /></p>
 <p><img src="../img/Railway01.png" style="zoom:80%;" /></p>
 <p></br></p>
-<p>b) Select <code>Authorize Railway App</code>.</p>
+<p>b) If the following screen shows-up, select <code>Authorize Railway App</code>.</p>
 <p><img src="../img/Railway02.png" style="zoom:80%;" /></p>
 <p></br></p>
 <p>c) Click on <code>Please agree to the new terms to keep on using Railway</code>.</p>
@@ -1513,7 +1527,7 @@ If you have unexpected issues when creating your site, restart with another brow
 If it still shows 200 hours, refresh your browser page.</p>
 <p><img src="../img/Railway06a.png" style="zoom:80%;" /></p>
 <p></br></p>
-<p>g) If you need to use Nightscout for more than 500 hours per month you need to upgrade your account to a Developer plan. Click on the <code>Starter Plan</code> information and select <code>Remove Resource Limits</code>.</p>
+<p>g) You need to use Nightscout for more than 500 hours per month: upgrade your account to a Developer plan. Click on the <code>Starter Plan</code> information and select <code>Remove Resource Limits</code>.</p>
 <p><img src="../img/Railway06b.png" style="zoom:80%;" /></p>
 <p></br></p>
 <p>Enter your credit card information and select <code>Subscribe to a Developer Plan</code>.</p>
@@ -1525,7 +1539,7 @@ If it still shows 200 hours, refresh your browser page.</p>
 <p><img src="../img/Railway06d.png" style="zoom:80%;" /><br />
 <img src="../img/Railway06e.png" style="zoom:80%;" /><br />
 If you are reluctant to leave a billing method to Railway, you can <strong>opt for a one-off 5$ purchase guaranteeing you access to a Developer plan</strong> until this credit will be used (which is also an insurance against seeing your site stop unexpectedly).<br />
-No billing will occur after the initial credits are fully used. They will transfer month to month (<em>note: we need to check for how long they transfer if not used.</em>) </p>
+No billing will occur after the initial credits are fully used. They will transfer month to month with no known limit in time.</p>
 </div>
 <p></br></p>
 <h3 id="step-3-create-your-database">Step 3: Create your database<a class="headerlink" href="#step-3-create-your-database" title="Permanent link">⌁</a></h3>
@@ -1685,8 +1699,9 @@ Disconnect your <code>Source Repo</code> with the cross at the end of the line.<
 <p>q) You can see your new Nightscout site name in the deployment tab of your project. Click on the name to open Nightscout.<br />
 Click on the link to open it.</p>
 <div class="admonition info">
-<p class="admonition-title">Railway site name</p>
-<p>You can <a href="#change-your-railway-nightscout-site-name">change your Railway site name</a> in order to make it easier to remember. <strong>Recommended</strong>. You will do this later, before setting your uploaders.</p>
+<p class="admonition-title">Change Railway site name</p>
+<p>You should <a href="#change-your-railway-nightscout-site-name">change your Railway site name</a> now in order to make it easier to remember. <strong>Recommended</strong>.<br />
+You can also do this later, before setting your uploaders.</p>
 </div>
 <p><img src="../img/RailwayM14.png" style="zoom:80%;" /></p>
 <p></br></p>
@@ -1713,7 +1728,10 @@ Click on the link to open it.</p>
 <p>Anyone with access to the URL of your Nightscout site, can view your BG and run reports of your data. It it strongly recommended that you enable <a href="../../../nightscout/security">security</a> to your site once you're done with the setup.  </p>
 </div>
 <p></br></p>
-<p>x) Dexcom Share and CareLink users should see data flowing in after some minutes. Other uploaders like xDrip+, Spike, xDrip4iOS, etc will need to be setup with the Nightscout address and API secret in the app.</p>
+<p>x) Dexcom Share users should see data flowing in after some minutes.
+xDrip+ users (including Medtronic <a href="../../../uploader/uploaders/#medtronic">CareLink followers</a>) should setup the uploader as shown <a href="../../../uploader/setup/#xdrip"><strong>here</strong></a>.
+xDrip4iOS users <a href="https://xdrip4ios.readthedocs.io/en/latest/connect/cgm/#nightscout-upload">here</a>.
+<a href="https://androidaps.readthedocs.io/en/latest/Configuration/Preferences.html#nsclient">AAPS</a> and <a href="https://loopkit.github.io/loopdocs/operation/loop-settings/services/">Loop</a>: consult the relative documentation.</p>
 <p><img src="../../../nightscout/img/NewNS48.png" style="zoom:80%;" /></p>
 <p></br></p>
 <h2 id="change-your-railway-nightscout-site-name">Change your Railway Nightscout site name<a class="headerlink" href="#change-your-railway-nightscout-site-name" title="Permanent link">⌁</a></h2>

@@ -776,6 +776,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../xdripcarelink/" class="md-nav__link">
+        xDrip+ CareLink bridge
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../nightscout/downloaders/" class="md-nav__link">
         Follower Devices
       </a>
@@ -1398,8 +1412,7 @@ BRIDGE_SERVER</code></p>
 <div class="admonition warning">
 <p class="admonition-title">The <code>mmconnect</code> plugin is <strong>NOT</strong> functional anymore with cloud Nightscout sites.</p>
 </div>
-<p>You can use an Android phone with a <a href="https://github.com/benceszasz/xDripCareLinkFollower">private version of xDrip+</a>. See <a href="../../uploader/setup/#xdrip">here</a> how to set it up.</p>
-<p>Plugin setup documented <a href="https://github.com/nightscout/cgm-remote-monitor/#mmconnect-minimed-connect-bridge">here</a> with <a href="https://github.com/nightscout/cgm-remote-monitor/#pump-pump-monitoring">additional fields</a> for your pump.</p>
+<p>You can use an Android phone with a private version of xDrip+. See <a href="../../uploader/xdripcarelink"><strong>here</strong></a> how to set it up.</p>
 <p></br></p>
 <h2 id="medtronic-600-series-with-uploader"><a href="http://pazaan.github.io/600SeriesAndroidUploader/">Medtronic 600 Series with uploader</a><a class="headerlink" href="#medtronic-600-series-with-uploader" title="Permanent link">⌁</a></h2>
 <p><img src="../img/UploadCFG08.png" style="zoom:60%;" /></p>
@@ -1415,6 +1428,14 @@ BRIDGE_SERVER</code></p>
 <code>my_nightscout_url</code> will depend on where your site is hosted (herokuapp.com, railway.app, fly.io, ...)<br />
 You will find your <code>API_SECRET</code>in your site variables.</p>
 </div>
+<p>Here is how it will look like for some vendors:</p>
+<pre><code class="html">https://yoursite.herokuapp.com/api/v1/
+https://yoursite.up.railway.app/api/v1/
+https://yoursite.guest.t1pal.com/api/v1/
+https://yoursite.10be.de/api/v1/
+</code></pre>
+
+<p></br></p>
 <p><img src="../img/UploadCFG00.png" style="zoom:80%;" /></p>
 <p>Facebook Group <a href="https://www.facebook.com/groups/xDripG5">xDrip</a></p>
 <p>For hosted Nightscout use the QR code from <a href="https://www.t1pal.com/account/sites/my#Uploaders">Uploaders</a> after selecting the <code>XDrip</code> tab.</p>
@@ -1479,13 +1500,13 @@ You will find your <code>API_SECRET</code>in your site variables.</p>
       
       
         
-        <a href="../../nightscout/downloaders/" class="md-footer__link md-footer__link--next" aria-label="Next: Follower Devices" rel="next">
+        <a href="../xdripcarelink/" class="md-footer__link md-footer__link--next" aria-label="Next: xDrip+ CareLink bridge" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Follower Devices
+              xDrip+ CareLink bridge
             </div>
           </div>
           <div class="md-footer__button md-icon">
