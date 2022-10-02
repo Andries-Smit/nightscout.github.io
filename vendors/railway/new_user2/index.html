@@ -14,7 +14,7 @@
     
     
       
-        <title>Digital Ocean - Nightscout</title>
+        <title>Railway (method 2) - Nightscout</title>
       
     
     
@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#nightscout-in-digitalocean" class="md-skip">
+        <a href="#railway-nightscout" class="md-skip">
           Skip to content
         </a>
       
@@ -100,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Digital Ocean
+              Railway (method 2)
             
           </span>
         </div>
@@ -455,7 +455,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../railway/new_user/" class="md-nav__link">
+      <a href="../new_user/" class="md-nav__link">
         Railway (method 1)
       </a>
     </li>
@@ -467,11 +467,155 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../railway/new_user2/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Railway (method 2)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Railway (method 2)
       </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#set-up-a-new-nightscout" class="md-nav__link">
+    Set up a new Nightscout
+  </a>
+  
+    <nav class="md-nav" aria-label="Set up a new Nightscout">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-your-railway-and-github-accounts-from-a-computer" class="md-nav__link">
+    Create your Railway and GitHub accounts from a computer.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-1-create-a-github-account-and-fork-cgm-remote-monitor" class="md-nav__link">
+    Step 1: Create a GitHub account and fork cgm-remote-monitor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-create-a-railway-account" class="md-nav__link">
+    Step 2: Create a Railway account
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-create-your-database" class="md-nav__link">
+    Step 3: Create your database
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 3: Create your database">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#you-can-create-a-new-mongodb-atlas-database" class="md-nav__link">
+    You can create a new MongoDB Atlas database.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#you-can-create-a-new-railway-mongo-database" class="md-nav__link">
+    You can create a new Railway Mongo database.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-deploy-nightscout-in-railway" class="md-nav__link">
+    Step 4 - Deploy Nightscout in Railway
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#change-your-railway-nightscout-site-name" class="md-nav__link">
+    Change your Railway Nightscout site name
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#migrate-your-mongodb-atlas-database-to-railway" class="md-nav__link">
+    Migrate your MongoDB Atlas database to Railway
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#editing-variables-in-railway" class="md-nav__link">
+    Editing Variables in Railway
+  </a>
+  
+    <nav class="md-nav" aria-label="Editing Variables in Railway">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#method-1-web-interface" class="md-nav__link">
+    Method 1 - Web interface
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-2-raw-editor" class="md-nav__link">
+    Method 2 - Raw Editor
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -483,7 +627,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../railway/migration/" class="md-nav__link">
+      <a href="../migration/" class="md-nav__link">
         Migration to Railway
       </a>
     </li>
@@ -565,81 +709,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Digital Ocean
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../digitalocean/new_user/" class="md-nav__link">
         Digital Ocean
       </a>
-      
-        
-
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#step-1-create-a-github-account" class="md-nav__link">
-    Step 1: Create a GitHub account
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-2-create-a-droplet" class="md-nav__link">
-    Step 2 - Create a Droplet
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-3-install-mongodb" class="md-nav__link">
-    Step 3 - Install MongoDB
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-4-create-a-new-database" class="md-nav__link">
-    Step 4 - Create a new database
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-5-install-nightscout" class="md-nav__link">
-    Step 5 - Install Nightscout
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1250,37 +1324,111 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#step-1-create-a-github-account" class="md-nav__link">
-    Step 1: Create a GitHub account
+  <a href="#set-up-a-new-nightscout" class="md-nav__link">
+    Set up a new Nightscout
+  </a>
+  
+    <nav class="md-nav" aria-label="Set up a new Nightscout">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-your-railway-and-github-accounts-from-a-computer" class="md-nav__link">
+    Create your Railway and GitHub accounts from a computer.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-1-create-a-github-account-and-fork-cgm-remote-monitor" class="md-nav__link">
+    Step 1: Create a GitHub account and fork cgm-remote-monitor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-create-a-railway-account" class="md-nav__link">
+    Step 2: Create a Railway account
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-create-your-database" class="md-nav__link">
+    Step 3: Create your database
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 3: Create your database">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#you-can-create-a-new-mongodb-atlas-database" class="md-nav__link">
+    You can create a new MongoDB Atlas database.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#you-can-create-a-new-railway-mongo-database" class="md-nav__link">
+    You can create a new Railway Mongo database.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-deploy-nightscout-in-railway" class="md-nav__link">
+    Step 4 - Deploy Nightscout in Railway
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-2-create-a-droplet" class="md-nav__link">
-    Step 2 - Create a Droplet
+  <a href="#change-your-railway-nightscout-site-name" class="md-nav__link">
+    Change your Railway Nightscout site name
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-3-install-mongodb" class="md-nav__link">
-    Step 3 - Install MongoDB
+  <a href="#migrate-your-mongodb-atlas-database-to-railway" class="md-nav__link">
+    Migrate your MongoDB Atlas database to Railway
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-4-create-a-new-database" class="md-nav__link">
-    Step 4 - Create a new database
+  <a href="#editing-variables-in-railway" class="md-nav__link">
+    Editing Variables in Railway
+  </a>
+  
+    <nav class="md-nav" aria-label="Editing Variables in Railway">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#method-1-web-interface" class="md-nav__link">
+    Method 1 - Web interface
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#step-5-install-nightscout" class="md-nav__link">
-    Step 5 - Install Nightscout
+        
+          <li class="md-nav__item">
+  <a href="#method-2-raw-editor" class="md-nav__link">
+    Method 2 - Raw Editor
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1297,215 +1445,285 @@
               
                 
                 
-                <h1 id="nightscout-in-digitalocean">Nightscout in DigitalOcean<a class="headerlink" href="#nightscout-in-digitalocean" title="Permanent link">⌁</a></h1>
-<p><span style="font-size:smaller;"><strong>APPLIES TO:</strong></span> <img src="../../../vendors/img/DO.png" style="zoom:60%;" /></p>
-<p>The original documentation is here <a href="https://gist.github.com/DrCR77/eb08b830d4f31092cf65a8a9976dc0a6">https://gist.github.com/DrCR77/eb08b830d4f31092cf65a8a9976dc0a6</a>.</p>
+                <h1 id="railway-nightscout">Railway Nightscout<a class="headerlink" href="#railway-nightscout" title="Permanent link">⌁</a></h1>
+<p>Method 2: using the help page</p>
+<hr />
+<p><span style="font-size:smaller;"><strong>APPLIES TO:</strong></span> <img src="../../img/railway-app-logo.png" style="zoom:80%;" /></p>
+<hr />
 <div class="admonition info">
 <p class="admonition-title">Cost</p>
 </div>
-<p>Nightscout and its database will fit in a Basic droplet at 6$ / month.<br />
-You can test this solution for free for 2 months.  </p>
-<p>Consider <a href="/#nightscout-as-a-service">Nightscout as a service</a> as an option.</p>
+<p>You can create your <strong>Railway Nightscout site for free</strong> (using a MongoDB Atlas database) by subscribing to a <a href="https://railway.app/pricing">Developer plan</a>. You will need to add a credit card to your Railway account but since Nightscout usage will remain below the free 5$ threshold per month, <strong>you will not be billed</strong>.</p>
 <p></br></p>
-<p><strong>WORK IN PROGRESS DO NOT USE YET</strong></p>
-<p><img src="../../../img/WIP.png" style="zoom:80%;" /></p>
+<p>Keep in mind a free M0 MongoDB Atlas database size is limited to 512MB and you will eventually need to perform <a href="../../../nightscout/admin_tools/#database-maintenance">cleanup</a>, make sure you add <a href="../../../nightscout/setup_variables/#dbsize-database-size"><code>dbsize</code></a> in <code>enable</code> to avoid unexpected Nightscout failure. You can increase database size with an <a href="https://www.mongodb.com/docs/atlas/manage-clusters/#shared-clusters">M2 shared cluster</a> the additional cost is 9$ per month.   </p>
+<div class="admonition warning">
+<p class="admonition-title">Database</p>
+<p>Adding a Railway MongoDB database to your Railway account will eventually generate costs.<br />
+The Developer plan offers Max 100 GB of Disk (Soft cap) but mind the cost $0.000231 / GB / Minute will quickly reach 5$ for a 512MB database.</p>
+</div>
 <p></br></p>
-<h3 id="step-1-create-a-github-account">Step 1: Create a GitHub account<a class="headerlink" href="#step-1-create-a-github-account" title="Permanent link">⌁</a></h3>
+<p><span style="font-size:larger;">Consider <a href="/#nightscout-as-a-service">Nightscout as a service</a> as an option.</span></p>
 <p></br></p>
-<p>If you already have a GitHub account, <a href="../../../nightscout/github/#update-your-nightscout-fork">update</a> your Nightscout project.</p>
-<p>If you don't have a GitHub account <a href="../../../nightscout/github/#create-a-github-account">create one</a> then <a href="../../../nightscout/github/#fork-the-nightscout-project">fork the Nightscout project</a> and come back.</p>
+<h2 id="set-up-a-new-nightscout">Set up a new Nightscout<a class="headerlink" href="#set-up-a-new-nightscout" title="Permanent link">⌁</a></h2>
+<h3 id="create-your-railway-and-github-accounts-from-a-computer">Create your Railway and GitHub accounts from a computer.<a class="headerlink" href="#create-your-railway-and-github-accounts-from-a-computer" title="Permanent link">⌁</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Do not change device/computer/browser during the setup process!<br />
+If you have unexpected issues when creating your site, restart with another browser.</p>
+</div>
 <p></br></p>
-<h3 id="step-2-create-a-droplet">Step 2 - Create a Droplet<a class="headerlink" href="#step-2-create-a-droplet" title="Permanent link">⌁</a></h3>
-<p>a) Sign up at <a href="https://www.digitalocean.com/">DigitalOcean</a> and <code>Sign up with GitHub</code>.</p>
-<p><img src="../img/DO01.png" style="zoom:80%;" /></p>
+<h3 id="step-1-create-a-github-account-and-fork-cgm-remote-monitor">Step 1: Create a GitHub account and fork <code>cgm-remote-monitor</code><a class="headerlink" href="#step-1-create-a-github-account-and-fork-cgm-remote-monitor" title="Permanent link">⌁</a></h3>
 <p></br></p>
-<p>b) Authorize DigitalOcean to access GitHub information.</p>
-<p><img src="../img/DO02.png" style="zoom:80%;" /></p>
+<p>If you don't have a GitHub account follow <a href="../../../nightscout/github/#create-a-github-account"><strong>this link</strong></a> to create one and come back.</p>
+<p>Follow this link <a href="../../../nightscout/github/#fork-the-nightscout-project"><strong>this link</strong></a> to fork the Nightscout <code>cgm-remote-monitor</code> project into GitHub, once done proceed to step 2 below.</p>
 <p></br></p>
-<p>c) Select <code>Deploy a virtual machine</code>.</p>
-<p><img src="../img/DO03.png" style="zoom:80%;" /></p>
+<h3 id="step-2-create-a-railway-account">Step 2: Create a Railway account<a class="headerlink" href="#step-2-create-a-railway-account" title="Permanent link">⌁</a></h3>
+<p>a) Open <a href="https://railway.app">Railway</a> in a new browser tab and click <code>login</code>. Login with GitHub.</p>
+<p><img src="../img/Railway00.png" style="zoom:80%;" /></p>
+<p><img src="../img/Railway01.png" style="zoom:80%;" /></p>
 <p></br></p>
-<p>d) Select <code>Ubuntu 20.04 (TLS) x64</code> using the drop down menu.</p>
-<p><img src="../img/DO04.png" style="zoom:80%;" /></p>
+<p>b) If the following screen shows-up, select <code>Authorize Railway App</code>.</p>
+<p><img src="../img/Railway02.png" style="zoom:80%;" /></p>
 <p></br></p>
-<p>e) Select <code>SHARED CPU</code> <code>Basic</code> in <code>Choose a plan</code>.</p>
-<p><img src="../img/DO05.png" style="zoom:80%;" /></p>
+<p>c) Click on <code>Please agree to the new terms to keep on using Railway</code>.</p>
+<p><img src="../img/Railway03.png" style="zoom:80%;" /></p>
 <p></br></p>
-<p>f) Change your Droplet plan to a <code>$4 Droplet</code>.<br />
-You can modify this later but you can't select anything cheaper than this first choice.</p>
-<p><img src="../img/DO06.png" style="zoom:80%;" /></p>
+<p>d) Scroll down and click <code>I agree with Railway's Terms of Service</code>.</p>
+<p><img src="../img/Railway04.png" style="zoom:60%;" /></p>
 <p></br></p>
-<p>g) Choose a datacenter close to where you live.</p>
-<p><img src="../img/DO24.png" style="zoom:80%;" /></p>
+<p>e) Scroll down and click <code>I will not deploy any of that</code>.</p>
+<p><img src="../img/Railway05.png" style="zoom:60%;" /></p>
 <p></br></p>
-<p>h) It is strongly recommended that you select <code>SSH Key</code> to have a secure login.<br />
-If you're not technical enough you will probably want to use a standard <code>root</code> password. If you decide to do so, make sure it's highly complex and change it regularly to avoid your site being hacked.</p>
-<p><img src="../img/DO07.png" style="zoom:80%;" /></p>
+<p>f) You should now see this. You've created your Railway account.<br />
+If it still shows 200 hours, refresh your browser page.</p>
+<p><img src="../img/Railway06a.png" style="zoom:80%;" /></p>
 <p></br></p>
-<p>g) Scroll down and click <code>Create</code>.</p>
-<p><img src="../img/DO09.png" style="zoom:80%;" /></p>
-<p>Wait until your droplet finishes initialization.</p>
+<p>g) You need to use Nightscout for more than 500 hours per month: upgrade your account to a Developer plan. Click on the <code>Starter Plan</code> information and select <code>Remove Resource Limits</code>.</p>
+<p><img src="../img/Railway06b.png" style="zoom:80%;" /></p>
 <p></br></p>
-<p>h) You need to confirm your identity with a credit card or with PayPal.<br />
-If you selected a credit card, 5$ will be booked on it: not withdrawn.</p>
-<p><img src="../img/DO08.png" style="zoom:80%;" /></p>
-<p>You now have 100$ to spend for free for the next 60 days.</p>
+<p>Enter your credit card information and select <code>Subscribe to a Developer Plan</code>.</p>
+<p><img src="../img/Railway06c.png" style="zoom:80%;" /></p>
+<p>Your card will be billed 1$ that will be refund immediately. Bank fees won't be refund.</p>
 <p></br></p>
+<div class="admonition note">
+<p class="admonition-title">One-off purchase</p>
+<p><img src="../img/Railway06d.png" style="zoom:80%;" /><br />
+<img src="../img/Railway06e.png" style="zoom:80%;" /><br />
+If you are reluctant to leave a billing method to Railway, you can <strong>opt for a one-off 5$ purchase guaranteeing you access to a Developer plan</strong> until this credit will be used (which is also an insurance against seeing your site stop unexpectedly).<br />
+No billing will occur after the initial credits are fully used. They will transfer month to month with no known limit in time.</p>
+</div>
 <p></br></p>
-<h3 id="step-3-install-mongodb">Step 3 - Install MongoDB<a class="headerlink" href="#step-3-install-mongodb" title="Permanent link">⌁</a></h3>
-<p>a) Select twice your new droplet to open the view you see below, in <code>Access</code>, select  <code>Launch Droplet Console</code>.</p>
-<p><img src="../img/DO11.png" style="zoom:80%;" /></p>
-<p>A terminal window will open.</p>
-<p><img src="../img/DO12.png" style="zoom:80%;" /></p>
+<h3 id="step-3-create-your-database">Step 3: Create your database<a class="headerlink" href="#step-3-create-your-database" title="Permanent link">⌁</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Already have a database?</p>
+<p>If you're migrating from another platform and you already have database connection string from another Nightsout deployment, just copy the <code>MONGODB_URI</code> or <code>MONGO_CONNECTION</code> string and keep your data!</p>
+</div>
+<p>You have two choices.</p>
+<ul>
+<li>
+<h4 id="you-can-create-a-new-mongodb-atlas-database">You can create a new MongoDB Atlas database.<a class="headerlink" href="#you-can-create-a-new-mongodb-atlas-database" title="Permanent link">⌁</a></h4>
+</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Costs</p>
+<p>Recommended for a free Nightscout site.</p>
+</div>
+<p>To create a new MongoDB database follow <a href="../../mongodb/atlas/#create-an-atlas-database">these instructions</a> and come back with your <code>MONGODB_URI</code> connection string.<br />
+The Atlas database size is limited to 512MB of data and is free to try. This might evolve in the future.</p>
+<ul>
+<li>
+<h4 id="you-can-create-a-new-railway-mongo-database">You can create a new Railway Mongo database.<a class="headerlink" href="#you-can-create-a-new-railway-mongo-database" title="Permanent link">⌁</a></h4>
+</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Costs</p>
+<p>Adding a Railway Mongo database will not fit forever in 5$ per month.<br />
+If you don't keep its dimension very small (&lt;200MB) you will most probably be charged for it.</p>
+</div>
+<p>a) Click <code>New Project</code> from your Dashboard screen (top right).</p>
+<p><img src="../../../vendors/railway/img/RailwayDB01.png" style="zoom:80%;" /></p>
 <p></br></p>
-<p>b) Update your Ubuntu system (this is a command you should type every 3 or 6 months to keep it updated).<br />
-Enter the following command:</p>
-<pre><code class="bash">sudo apt-get update &amp;&amp; apt-get upgrade -y
-</code></pre>
-
-<p><img src="../img/DO13.png" style="zoom:80%;" /></p>
-<p>You will see it's completed when the terminal stops scrolling text and you're returned to the prompt. Something like this:</p>
-<p><img src="../img/DO14.png" style="zoom:80%;" /></p>
+<p>b) Click  <code>Provision MongoDB</code></p>
+<p><img src="../../../vendors/railway/img/RailwayDB02.png" style="zoom:80%;" /></p>
 <p></br></p>
-<p>c) Install MongoDB entering the following command:</p>
-<pre><code class="bash">sudo apt install mongodb -y
-</code></pre>
-
-<p>Wait until it completes.</p>
+<p>c) Select your new MongoDB project.</p>
+<p><img src="../../../vendors/railway/img/RailwayDB03.png" style="zoom:80%;" /></p>
 <p></br></p>
-<p>d) Enter in Mongo shell with the following command:</p>
-<pre><code class="bash">mongo --port 27017
-</code></pre>
-
-<p><img src="../img/DO15.png" style="zoom:80%;" /></p>
-<p>You will know you've entered the shell when the prompt is displayed: you will see <code>&gt;</code>.</p>
-<p>Enter</p>
-<pre><code>use admin
-</code></pre>
-
-<p><img src="../img/DO16.png" style="zoom:80%;" /></p>
+<p>d) Go to the <code>Connect</code> page.</p>
+<p><img src="../../../vendors/railway/img/RailwayDB04.png" style="zoom:80%;" /></p>
 <p></br></p>
-<p>e) We will create an admin user. Decide on a name and a password.<br />
-Avoid reusing other usernames and passwords.
-In the example below the user is <code>john_dbadmin</code> and the password <code>5t1ll5053cr3t!</code>.<br />
-Do NOT use these examples for your database!</p>
-<p>Now enter the user creation instruction. It will be made like this:<br />
-<strong>BUT</strong> you need to <strong>replace</strong> <code>ADMIN_NAME</code> and <code>ADMIN_PASSWORD</code> with those you decided above!</p>
-<pre><code class="bash">db.createUser({user: &quot;ADMIN_NAME&quot;, pwd: &quot;ADMIN_PASSWORD&quot;, roles: [ { role: &quot;userAdminAnyDatabase&quot;, db: &quot;admin&quot; }] })
-</code></pre>
-
-<p>Which gives for example:</p>
-<p><img src="../img/DO17.png" style="zoom:80%;" /></p>
+<p>e) Move the mouse to the end of the line showing the <code>Mongo Connection URL</code> and click the copy icon.</p>
+<p><img src="../../../vendors/railway/img/RailwayDB05.png" style="zoom:80%;" /></p>
 <p></br></p>
-<p>f) Exit the shell entering:</p>
-<pre><code class="bash">exit
-</code></pre>
-
-<p>Mongo will answer <code>bye</code> and you'll be back to Ubuntu's command prompt.</p>
+<div class="admonition warning">
+<p class="admonition-title">This is an important information</p>
+</div>
+<p>Now that you have <strong>copied</strong> the resulting <code>MONGODB_URI</code> string, keep it in a <strong>safe place</strong>, you will need it later.</p>
 <p></br></p>
-<p>g) Edit your Mongo configuration typing:</p>
-<pre><code class="bash">sudo nano /etc/mongodb.conf
-</code></pre>
-
-<p>Nano text editor will open. Yes, that's the easiest way to edit text files in Linux. Don't complain else I'll make you use <a href="http://www.viemu.com/a-why-vi-vim.html">vi</a>.</p>
-<p><img src="../img/DO18.png" style="zoom:80%;" /></p>
+<h2 id="step-4-deploy-nightscout-in-railway">Step 4 - Deploy Nightscout in Railway<a class="headerlink" href="#step-4-deploy-nightscout-in-railway" title="Permanent link">⌁</a></h2>
+<p>a) Click on <code>Create a New project</code>.</p>
+<p><img src="../img/Railway06.png" style="zoom:80%;" /></p>
+<p>If you don't see that, top right, click <code>+ New Project</code>.</p>
+<p><img src="../img/RailwayDB01.png" style="zoom:80%;" /></p>
 <p></br></p>
-<p>h) Using your keyboard arrows (no, your mouse doesn't work here), go down until you're on the line reading  <code>#auth = true</code> and remove the  <code>#</code>. 
-<img src="../img/DO19.png" style="zoom:80%;" /></p>
-<p>The line should now read:</p>
-<p><img src="../img/DO20.png" style="zoom:80%;" /></p>
+<p>b) Select <code>Deploy from GitHub repo</code>.</p>
+<p><img src="../img/RailwayM19.png" style="zoom:80%;" /></p>
 <p></br></p>
-<p>i) Save the modified file:</p>
+<p>c) Select <code>Configure GitHub App</code>.</p>
+<p><img src="../img/RailwayM02.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>d) Choose <code>Only select repositories</code>, in the <code>Select repositories</code> drop-down select your own fork of <code>cgm-remote-monitor</code>.<br />
+Then, at the bottom, click <code>Install &amp; Authorize</code>.</p>
+<p><img src="../img/Railway08.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>e) You should be back to <code>Deploy from GitHub repo</code>, select it.</p>
+<p><img src="../img/RailwayM19.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>f) Now you can select your own GitHub repository.</p>
+<p><img src="../img/RailwayM03.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>g) Select <code>Add variables</code>.</p>
+<p><img src="../img/RailwayM20.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>h) The Nightscout project will deploy in the background, just ignore it: now we need to setup our Nightscout variables.<br />
+Click on <code>Raw Editor</code>.</p>
+<p><img src="../img/RailwayM21b.png" style="zoom:80%;" /></p>
+<p>The raw editor will open, leave it like this for now.</p>
+<p><img src="../img/RailwayM21c.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>i) Open the <a href="../NightscoutVariablesRailway.html"><strong>helper page</strong></a> in a new browser tab.</p>
+<p>File all necessary fields, click on the Validate button at the bottom of the form, if no error is seen you will have all variables displayed in the text box at the bottom, click on the Copy All button.</p>
+<p><img src="../img/Railway42.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>j)  Return to the Railway Raw editor. Paste the result. Click <code>Update Variables</code>.</p>
+<p><img src="../img/Railway43.png" style="zoom:80%;" /></p>
+<p>Your site will redeploy, wait until redeploy completes.</p>
+<p></br></p>
+<p>Congratulations. You created your new Nightscout site with Railway.</p>
+<p>Click the site name to open Nightscout.</p>
+<p><img src="../img/RailwayM14.png" style="zoom:80%;" /></p>
+<p></br></p>
+<h2 id="change-your-railway-nightscout-site-name">Change your Railway Nightscout site name<a class="headerlink" href="#change-your-railway-nightscout-site-name" title="Permanent link">⌁</a></h2>
+<p>Railways automatically makes a name when creating your new site. It is rather difficult to remember.</p>
+<p>You can change the site name but need to keep the <code>.up.railway.app</code> domain.</p>
 <ol>
-<li>Press <code>Ctrl-O</code>    (the letter O not zero)</li>
-<li>Press <code>Enter</code></li>
-<li>Press <code>Ctrl-X</code></li>
+<li>
+<p>Select your Nightscout app</p>
+</li>
+<li>
+<p>Go in <code>Settings</code></p>
+</li>
+<li>
+<p>In <code>Domains</code> go to the end of line and click the edit icon</p>
+</li>
+<li>
+<p>Write your new name and check it's available</p>
+</li>
 </ol>
-<p><em>Note: if you use a Mac the <code>Ctrl</code> key is <code>⌘</code></em></p>
-<p>You can return to step <strong>g.</strong> above if you want to check it's been modified correctly.</p>
+<p>Click <code>Update</code></p>
+<p>Your Nightscout URL will now be <code>https://</code><em>yoursitename</em><code>.up.railway.app</code></p>
+<p><img src="../img/Railway38.png" style="zoom:80%;" /></p>
 <p></br></p>
-<p>Good. Now you know how to use Nano.</p>
+<p>Change all your <a href="../../../uploader/setup/">uploaders</a> and <a href="../../../nightscout/downloaders/">follower</a> devices to reflect the new URL once verified correct functioning of your Nightscout site.</p>
 <p></br></p>
-<p>j) Restart Mongo with this command:</p>
-<pre><code class="bash">sudo service mongodb restart
+<hr />
+<p></br></p>
+<h2 id="migrate-your-mongodb-atlas-database-to-railway">Migrate your MongoDB Atlas database to Railway<a class="headerlink" href="#migrate-your-mongodb-atlas-database-to-railway" title="Permanent link">⌁</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Not an easy operation</p>
+<p>This is not an easy operation and requires command line instructions using a computer.<br />
+You can have a trusted person help you perform it, if you can provide both MongoDB Atlas and Railway MongoDB connection strings.</p>
+</div>
+<p>a) Dump your Atlas database</p>
+<ul>
+<li>
+<p>Follow <a href="../../mongodb/atlas/#backup-your-database">these instructions</a>.</p>
+</li>
+<li>
+<p>Make sure you renamed your exported database folder to <code>test</code> as this is the default database name in Railway.</p>
+</li>
+</ul>
+<p>b) Copy your Railway database connection string</p>
+<ol>
+<li>Select your MongoDB database</li>
+<li>Click on <code>Connect</code></li>
+<li>Click on the Copy icon</li>
+</ol>
+<p><img src="../../mongodb/img/AtlasX05.png" style="zoom:80%;" /></p>
+<p>c) Rename the database dump folder (example for Windows below) to <code>test</code> (default)</p>
+<p><img src="../../mongodb/img/AtlasX07.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>d) Import your Atlas database in Railway</p>
+<ul>
+<li>Open a command line utility (CMD, Terminal, ...) and make your way to the utility folder (if you don't want to include it in your system path). For example in Windows 64bits it's in <code>C:\Program Files\MongoDB\Tools\100\bin</code>.</li>
+</ul>
+<p>Type a new command starting with: <code>mongorestore --uri</code> followed by the database string you copied above in <strong>b)3.</strong>, run it.</p>
+<p><img src="../../mongodb/img/AtlasX06.png" style="zoom:80%;" /></p>
+<p>e) Wait until the import completes. You will see a line like this before returning to the command prompt.</p>
+<pre><code>2022-09-11T09:49:35.331+0200    456003 document(s) restored successfully. 0 document(s) failed to restore.
 </code></pre>
 
-<p>Nothing special will display. You will return to the command prompt immediately.</p>
+<p>The number of documents will be different but the rest should be identical.</p>
+<p>You have completed database restore.</p>
 <p></br></p>
-<p>You have installed the MongoDB application in your droplet.</p>
+<p>If you're migrating your database, make sure to <a href="#editing-variables-in-railway">update</a> the <code>MONGODB_URI</code> variable string to the new URI as copied in <strong>b)3.</strong>.<br />
+Refresh your Nightscout browser once deployment completes view to verify data has been imported correctly.</p>
 <p></br></p>
-<h3 id="step-4-create-a-new-database">Step 4 - Create a new database<a class="headerlink" href="#step-4-create-a-new-database" title="Permanent link">⌁</a></h3>
-<p>a) Login into Mongo as an admin typing this command:<br />
-<strong>BUT</strong> you need to <strong>replace</strong> <code>ADMIN_NAME</code> with your own database administrator name, the one you decided above in <strong>Step 3.e.</strong></p>
-<pre><code class="bash">mongo -u ADMIN_NAME -p --authenticationDatabase admin
-</code></pre>
-
-<p>You will be asked to enter the password matching your admin user (still that one defined in <strong>Step 3.e</strong>.).</p>
-<p>This is the example continued, don't use <code>john_dbadmin</code> in your case: use your own.</p>
-<p><img src="../img/DO21.png" style="zoom:80%;" /></p>
+<hr />
 <p></br></p>
-<p>b) Now you need to create a database name.<br />
-Make it simple (letters), this is just the place your Nightscout data will be stored.<br />
-Type this command:<br />
-<strong>BUT</strong> you need to <strong>replace</strong> <code>MONGO_NS_DB</code> with your own database name.</p>
-<pre><code class="bash">use MONGO_NS_DB
-</code></pre>
-
-<p>In the example below the database name is <code>NS-DB</code>.</p>
-<p><img src="../img/DO22.png" style="zoom:80%;" /></p>
+<h2 id="editing-variables-in-railway">Editing Variables in Railway<a class="headerlink" href="#editing-variables-in-railway" title="Permanent link">⌁</a></h2>
 <p></br></p>
-<p>c) Then you need to create a database user. It's not the same than the Mongo user.<br />
-Invent a name (letters and numbers) and a password (letters and numbers, uppercase and lowercase).</p>
-<p>Type this command:<br />
-<strong>BUT</strong> you need to <strong>replace</strong> <code>MONGO_NS_USER</code> with your database user name, <code>MONGO_NS_PASSWORD</code> with its matching password and <code>MONGO_NS_DB</code> with the database name you created above.</p>
-<pre><code class="bash">db.createUser({user: &quot;MONGO_NS_USER&quot;, pwd: &quot;MONGO_NS_PASSWORD&quot;, roles: [ { role: &quot;readWrite&quot;, db: &quot;MONGO_NS_DB&quot; }]})
-</code></pre>
-
-<p>In the example below the database username is <code>john_nightscout</code>, the password is <code>Nightscout19800416</code> and database still <code>NS-DB</code>.</p>
-<p><img src="../img/DO23.png" style="zoom:80%;" /></p>
+<h4 id="method-1-web-interface">Method 1 - Web interface<a class="headerlink" href="#method-1-web-interface" title="Permanent link">⌁</a></h4>
+<p>This is recommended when you only need to edit or add few variables.</p>
+<p>a) Open <a href="https://railway.app">Railway</a> and click <code>login</code>. Login with GitHub.</p>
+<p><img src="../img/Railway00.png" style="zoom:80%;" /></p>
+<p><img src="../img/Railway01.png" style="zoom:80%;" /></p>
 <p></br></p>
-<p>d) Check you can login into Mongo with this user typing this command:<br />
-<strong>BUT</strong> you need to <strong>replace</strong> <code>MONGO_NS_USER</code> with your own database administrator name, and replace <code>MONGO_NS_DB</code> with your own database name. The ones you decided above in <strong>Step 3.c.</strong></p>
-<pre><code class="bash">mongo -u MONGO_NS_USER -p --authenticationDatabase MONGO_NS_DB
-</code></pre>
-
-<p>You will be asked to enter the password matching your user (the one defined in <strong>Step 3.c</strong>.).</p>
-<p>This is the example continued, don't use <code>john_nightscout</code>: use your own.</p>
-<p><img src="../img/DO21.png" style="zoom:80%;" /></p>
-<p>e) Exit the shell entering:</p>
-<pre><code class="bash">exit
-</code></pre>
-
-<p>Mongo will answer <code>bye</code> and you'll be back to Ubuntu's command prompt.</p>
+<p>b) Select your Nightscout project.</p>
+<p><img src="../img/RailwayM15.png" style="zoom:80%;" /></p>
 <p></br></p>
-<p>You have created your Nightscout MongoDB database and its user.</p>
+<p>c) Select your web app.</p>
+<p><img src="../img/RailwayM16.png" style="zoom:80%;" /></p>
 <p></br></p>
-<h3 id="step-5-install-nightscout">Step 5 - Install Nightscout<a class="headerlink" href="#step-5-install-nightscout" title="Permanent link">⌁</a></h3>
-<p>a) Create a new user.<br />
-You are now running Ubunto with highest privilege. Don't try to run nightscout as root user, it will not work.<br />
-<strong>Replace <code>mainuser</code></strong> with a name of your choice, like your name, only lowercase letters.</p>
-<pre><code class="bash">sudo adduser mainuser
-</code></pre>
-
-<p>In the example below, the user name is <code>john</code>.</p>
-<p><img src="../img/DO25.png" style="zoom:80%;" /></p>
-<p>You need to invent a password for your new user.<br />
-Confirm it then just hit <code>Enter</code> for the following lines, when done key <code>Y</code> then <code>Enter</code>.</p>
-<p><img src="../img/DO26.png" style="zoom:80%;" /></p>
+<p>d) Click on <code>Variables</code>.</p>
+<p><img src="../img/RailwayM17.png" style="zoom:80%;" /></p>
 <p></br></p>
-<p>b) Make your user an administrator.<br />
-Type the following command:</p>
-<p><strong>Replace <code>mainuser</code></strong> with your new user name.</p>
-<pre><code class="bash">sudo usermod -aG sudo mainuser
-</code></pre>
-
-<p><img src="../img/DO27.png" style="zoom:80%;" /></p>
+<p>e) You can perform various operations on your variables:</p>
+<ol>
+<li>Add a new variable with <code>+ New Variable</code></li>
+<li>View the variable value with <code>Show Value</code></li>
+<li>Edit or delete the variable or its value with the line end menu</li>
+</ol>
+<p><img src="../img/RailwayM18.png" style="zoom:80%;" /></p>
 <p></br></p>
-<p>c) Login to the machine using the account we just created.<br />
-Type the following command:</p>
-<p><strong>Replace <code>mainuser</code></strong> with your new user name.</p>
-<pre><code>ssh mainuser@IP-number
-</code></pre>
+<p>Note that each variable modification will redeploy your project.</p>
+<p></br></p>
+<h4 id="method-2-raw-editor">Method 2 - Raw Editor<a class="headerlink" href="#method-2-raw-editor" title="Permanent link">⌁</a></h4>
+<p>This is recommended when you must perform lots of changes to avoid multiple project redeploys.</p>
+<p>a) Open <a href="https://railway.app">Railway</a> and click <code>login</code>. Login with GitHub.</p>
+<p><img src="../img/Railway00.png" style="zoom:80%;" /></p>
+<p><img src="../img/Railway01.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>b) Select your Nightscout project.</p>
+<p><img src="../img/RailwayM15.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>c) Select your web app.</p>
+<p><img src="../img/RailwayM16.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>d) Click on <code>Variables</code>.</p>
+<p><img src="../img/RailwayM17.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>e) Click on <code>RAW Editor</code> top right</p>
+<p><img src="../img/Railway39.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>f) You can access all your variables in a text editor, each line contains the variable name, the sign <code>=</code> then its corresponding value.</p>
+<p><code>VARIABLE=value</code></p>
+<p>Perform all your changes taking care of uppercase and lowercase information and click <code>Update Variables</code> when finished.</p>
+<p><img src="../img/Railway40.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>Once saved your project will redeploy.<br />
+If deploy fails, check your modifications...</p>
+<p></br></p>
                 
               
               
@@ -1530,7 +1748,7 @@ Type the following command:</p>
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../../MVPS/new_user/" class="md-footer__link md-footer__link--prev" aria-label="Previous: MVPS" rel="prev">
+        <a href="../new_user/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Railway (method 1)" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1539,20 +1757,20 @@ Type the following command:</p>
               <span class="md-footer__direction">
                 Previous
               </span>
-              MVPS
+              Railway (method 1)
             </div>
           </div>
         </a>
       
       
         
-        <a href="../../synology/new_user/" class="md-footer__link md-footer__link--next" aria-label="Next: Synology NAS" rel="next">
+        <a href="../migration/" class="md-footer__link md-footer__link--next" aria-label="Next: Migration to Railway" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Synology NAS
+              Migration to Railway
             </div>
           </div>
           <div class="md-footer__button md-icon">
