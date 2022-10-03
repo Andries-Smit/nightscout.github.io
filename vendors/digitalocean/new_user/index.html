@@ -636,6 +636,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#step-6-configure-nightscout" class="md-nav__link">
+    Step 6 - Configure Nightscout
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1284,6 +1291,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#step-6-configure-nightscout" class="md-nav__link">
+    Step 6 - Configure Nightscout
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1482,7 +1496,7 @@ Invent a name (letters and numbers) and a password (letters and numbers, upperca
 <p></br></p>
 <h3 id="step-5-install-nightscout">Step 5 - Install Nightscout<a class="headerlink" href="#step-5-install-nightscout" title="Permanent link">⌁</a></h3>
 <p>a) Create a new user.<br />
-You are now running Ubunto with highest privilege. Don't try to run nightscout as root user, it will not work.<br />
+You are now running Ubuntu with highest privilege. Don't try to run Nightscout as root user, it will not work.<br />
 <strong>Replace <code>mainuser</code></strong> with a name of your choice, like your name, only lowercase letters.</p>
 <pre><code class="bash">sudo adduser mainuser
 </code></pre>
@@ -1491,7 +1505,7 @@ You are now running Ubunto with highest privilege. Don't try to run nightscout a
 <p><img src="../img/DO25.png" style="zoom:80%;" /></p>
 <p>You need to invent a password for your new user.<br />
 Confirm it then just hit <code>Enter</code> for the following lines, when done key <code>Y</code> then <code>Enter</code>.</p>
-<p><img src="../img/DO26.png" style="zoom:80%;" /></p>
+<p><img src="../img/DO26.png" style="zoom:80%;" /> <!--  MyNightscout --></p>
 <p></br></p>
 <p>b) Make your user an administrator.<br />
 Type the following command:</p>
@@ -1504,8 +1518,58 @@ Type the following command:</p>
 <p>c) Login to the machine using the account we just created.<br />
 Type the following command:</p>
 <p><strong>Replace <code>mainuser</code></strong> with your new user name.</p>
-<pre><code>ssh mainuser@IP-number
+<pre><code>sudo -u mainuser -s
 </code></pre>
+
+<p>In the example below, the user name is <code>john</code>.</p>
+<p><img src="../img/DO28.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>d) Install <code>nodejs</code> and <code>npm</code>.<br />
+Type the following command:</p>
+<pre><code>curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+</code></pre>
+
+<p><img src="../img/DO29.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>Once complete, type the following command:</p>
+<pre><code>sudo apt-get install -y nodejs
+</code></pre>
+
+<p><img src="../img/DO30.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>e) Clone the Nightscout repository <code>cgm-remote-monitor</code>.<br />
+Enter the following commands, one at a time, enter each time:</p>
+<pre><code>cd
+</code></pre>
+
+<pre><code>git clone https://github.com/nightscout/cgm-remote-monitor.git
+</code></pre>
+
+<p><img src="../img/DO32.png" style="zoom:80%;" /></p>
+<pre><code>ln -s cgm-remote-monitor nightscout
+</code></pre>
+
+<pre><code>cd nightscout
+</code></pre>
+
+<p><img src="../img/DO33.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>f) Install Nightscout.<br />
+Type the following command:</p>
+<pre><code>npm install
+</code></pre>
+
+<p><img src="../img/DO34.png" style="zoom:80%;" /></p>
+<p>It will take a long time to complete. Be patient.</p>
+<p></br></p>
+<h3 id="step-6-configure-nightscout">Step 6 - Configure Nightscout<a class="headerlink" href="#step-6-configure-nightscout" title="Permanent link">⌁</a></h3>
+<p>a) Create a new user.<br />
+You are now running Ubuntu with highest privilege. Don't try to run Nightscout as root user, it will not work.<br />
+<strong>Replace <code>mainuser</code></strong> with a name of your choice, like your name, only lowercase letters.</p>
+<pre><code class="bash">sudo adduser mainuser
+</code></pre>
+
+<p>In the example below, the user name is <code>john</code>.</p>
                 
               
               
