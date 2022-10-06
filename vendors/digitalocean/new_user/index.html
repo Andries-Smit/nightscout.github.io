@@ -1321,7 +1321,7 @@
 You can test this solution for free for 2 months.  </p>
 <p>Consider <a href="/#nightscout-as-a-service">Nightscout as a service</a> as an option.</p>
 <p></br></p>
-<p><strong>WORK IN PROGRESS DO NOT USE YET</strong></p>
+<p><strong>WORK IN PROGRESS DO NOT USE</strong></p>
 <p><img src="../../../img/WIP.png" style="zoom:80%;" /></p>
 <p></br></p>
 <h3 id="step-1-create-a-github-account">Step 1: Create a GitHub account<a class="headerlink" href="#step-1-create-a-github-account" title="Permanent link">⌁</a></h3>
@@ -1340,6 +1340,9 @@ You can test this solution for free for 2 months.  </p>
 <p><img src="../img/DO03.png" style="zoom:80%;" /></p>
 <p></br></p>
 <p>d) Select <code>Ubuntu 20.04 (TLS) x64</code> using the drop down menu.</p>
+<div class="admonition warning">
+<p class="admonition-title">Do not use 22.04 as MongoDB is <a href="https://www.mongodb.com/community/forums/t/installing-mongodb-over-ubuntu-22-04/159931/58">not yet supported</a> in this release</p>
+</div>
 <p><img src="../img/DO04.png" style="zoom:80%;" /></p>
 <p></br></p>
 <p>e) Select <code>SHARED CPU</code> <code>Basic</code> in <code>Choose a plan</code>.</p>
@@ -1380,6 +1383,12 @@ Enter the following command:</p>
 <p><img src="../img/DO13.png" style="zoom:80%;" /></p>
 <p>You will see it's completed when the terminal stops scrolling text and you're returned to the prompt. Something like this:</p>
 <p><img src="../img/DO14.png" style="zoom:80%;" /></p>
+<p><strong>If you see the following message: <code>*** System restart required ***</code> you will need to reboot</strong>. Do not skip this step.</p>
+<p>Type the following command and wait 5 minutes before opening again the console as in <strong>a)</strong> above.<br />
+Your system will reboot after one minute after you enter the command. Wait.</p>
+<pre><code class="bash">shutdown -r
+</code></pre>
+
 <p></br></p>
 <p>c) Install MongoDB entering the following command:</p>
 <pre><code class="bash">sudo apt install mongodb -y
@@ -1478,7 +1487,13 @@ Invent a name (letters and numbers) and a password (letters and numbers, upperca
 <p>In the example below the database username is <code>john_nightscout</code>, the password is <code>Nightscout19800416</code> and database still <code>NS-DB</code>.</p>
 <p><img src="../img/DO23.png" style="zoom:80%;" /></p>
 <p></br></p>
-<p>d) Check you can login into Mongo with this user typing this command:<br />
+<p>d) Exit the shell entering:</p>
+<pre><code class="bash">exit
+</code></pre>
+
+<p>Mongo will answer <code>bye</code> and you'll be back to Ubuntu's command prompt.</p>
+<p></br></p>
+<p>e) Check you can login into Mongo with this user typing this command:<br />
 <strong>BUT</strong> you need to <strong>replace</strong> <code>MONGO_NS_USER</code> with your own database administrator name, and replace <code>MONGO_NS_DB</code> with your own database name. The ones you decided above in <strong>Step 3.c.</strong></p>
 <pre><code class="bash">mongo -u MONGO_NS_USER -p --authenticationDatabase MONGO_NS_DB
 </code></pre>
@@ -1486,7 +1501,8 @@ Invent a name (letters and numbers) and a password (letters and numbers, upperca
 <p>You will be asked to enter the password matching your user (the one defined in <strong>Step 3.c</strong>.).</p>
 <p>This is the example continued, don't use <code>john_nightscout</code>: use your own.</p>
 <p><img src="../img/DO21.png" style="zoom:80%;" /></p>
-<p>e) Exit the shell entering:</p>
+<p></br></p>
+<p>f) Exit the shell entering:</p>
 <pre><code class="bash">exit
 </code></pre>
 
@@ -1563,13 +1579,58 @@ Type the following command:</p>
 <p>It will take a long time to complete. Be patient.</p>
 <p></br></p>
 <h3 id="step-6-configure-nightscout">Step 6 - Configure Nightscout<a class="headerlink" href="#step-6-configure-nightscout" title="Permanent link">⌁</a></h3>
-<p>a) Create a new user.<br />
-You are now running Ubuntu with highest privilege. Don't try to run Nightscout as root user, it will not work.<br />
-<strong>Replace <code>mainuser</code></strong> with a name of your choice, like your name, only lowercase letters.</p>
-<pre><code class="bash">sudo adduser mainuser
+<p>a) Edit the configuration file.</p>
+<pre><code class="bash">nano my.env
 </code></pre>
 
-<p>In the example below, the user name is <code>john</code>.</p>
+<p>A text editor will open. Leave it like that for the moment.</p>
+<p><img src="../img/DO35.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>b) Identify your IP.<br />
+Go back in your droplet settings and write down the <code>IPv4</code> information. You will need it in the form below for <code>BASE_URL</code>.</p>
+<p><img src="../img/DO36.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>c) Open the <a href="../NightscoutVariablesUbuntu.html"><strong>helper page</strong></a> in a new browser tab.</p>
+<p>File all necessary fields, click on the Validate button at the bottom of the form, if no error is seen you will have all variables displayed in the text box at the bottom, click on the Copy All button.</p>
+<p>d) Return to the text editor. Paste the result in <code>nano</code>.</p>
+<p><img src="../img/DO37.png" style="zoom:80%;" /></p>
+<p>e) Save the modified file:</p>
+<ol>
+<li>Press <code>Ctrl-O</code>    (the letter O not zero)</li>
+<li>Press <code>Enter</code></li>
+<li>Press <code>Ctrl-X</code></li>
+</ol>
+<p><em>Note: if you use a Mac the <code>Ctrl</code> key is <code>⌘</code></em></p>
+<p></br></p>
+<p>f) Install <code>pm2</code>.<br />
+Type the following command:</p>
+<pre><code>sudo npm install pm2 -g
+</code></pre>
+
+<p><img src="../img/DO38.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>g) Start cgm-remote-monitor with <code>pm2</code>.<br />
+Type the following command:</p>
+<pre><code>env $(cat my.env)  PORT=1337 pm2 start server.js
+</code></pre>
+
+<p><img src="../img/DO39.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>h) Make <code>pm2</code> start cgm-remote-monitor on startup.  </p>
+<p>Type the following command:</p>
+<pre><code>pm2 startup
+</code></pre>
+
+<p>This will give you a command you need to run as superuser to allow pm2 to start the app on reboot.
+The command will be something like: <code>sudo su -c "env PATH=$PATH:/usr/bin pm2 startup ..."</code></p>
+<p>Copy the tailored command, paste and execute it.</p>
+<p></br></p>
+<p>i) Save it.</p>
+<pre><code>pm2 save
+</code></pre>
+
+<p>Your Nightscout site is not available at http:// and the IP address you found in b) but it's not secured so most browsers will refuse it.</p>
+<p></br></p>
                 
               
               
