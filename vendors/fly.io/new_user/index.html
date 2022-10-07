@@ -539,8 +539,57 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#editing-secrets-in-flyio" class="md-nav__link">
-    Editing Secrets in Fly.io
+  <a href="#step-1-create-a-github-account" class="md-nav__link">
+    Step 1: Create a GitHub account
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-download-flyio-command-line-interface-cli" class="md-nav__link">
+    Step 2: Download fly.io Command Line Interface (CLI)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-create-a-flyio-account" class="md-nav__link">
+    Step 3: Create a fly.io account
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-create-an-atlas-account" class="md-nav__link">
+    Step 4: Create an Atlas account
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-fork-and-deploy-cgm-remote-monitor" class="md-nav__link">
+    Step 4: Fork and deploy cgm-remote-monitor
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-setting-variables" class="md-nav__link">
+    Step 5: Setting Variables
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-6-nightscout-application-configuration" class="md-nav__link">
+    Step 6: Nightscout Application Configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-7-uploader-setup" class="md-nav__link">
+    Step 7: Uploader setup
   </a>
   
 </li>
@@ -560,8 +609,36 @@
   
   
     <li class="md-nav__item">
+      <a href="../migrate/" class="md-nav__link">
+        Migration to Fly.io
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../northflank/new_user/" class="md-nav__link">
         Northflank
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../northflank/migrate/" class="md-nav__link">
+        Migration to Northflank
       </a>
     </li>
   
@@ -1236,8 +1313,57 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#editing-secrets-in-flyio" class="md-nav__link">
-    Editing Secrets in Fly.io
+  <a href="#step-1-create-a-github-account" class="md-nav__link">
+    Step 1: Create a GitHub account
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-download-flyio-command-line-interface-cli" class="md-nav__link">
+    Step 2: Download fly.io Command Line Interface (CLI)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-create-a-flyio-account" class="md-nav__link">
+    Step 3: Create a fly.io account
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-create-an-atlas-account" class="md-nav__link">
+    Step 4: Create an Atlas account
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-fork-and-deploy-cgm-remote-monitor" class="md-nav__link">
+    Step 4: Fork and deploy cgm-remote-monitor
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-setting-variables" class="md-nav__link">
+    Step 5: Setting Variables
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-6-nightscout-application-configuration" class="md-nav__link">
+    Step 6: Nightscout Application Configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-7-uploader-setup" class="md-nav__link">
+    Step 7: Uploader setup
   </a>
   
 </li>
@@ -1261,43 +1387,51 @@
 <p class="admonition-title">Cost</p>
 </div>
 <p>Nightscout is expected to run without charges in the <a href="https://fly.io/docs/about/pricing/#free-tier">free tier</a>.<br />
-Most operations involve CLI and are rather complex.<br />
+Most operations involve CLI and are rather complex for the non-technical user. <br />
 Consider <a href="/#nightscout-as-a-service">Nightscout as a service</a> as an option.</p>
 <p></br></p>
+<p><strong>WORK IN PROGRESS DO NOT USE</strong></p>
+<p><img src="../../../img/WIP.png" style="zoom:80%;" /></p>
+<p></br></p>
 <h2 id="set-up-a-new-nightscout">Set up a new Nightscout<a class="headerlink" href="#set-up-a-new-nightscout" title="Permanent link">⌁</a></h2>
-<p>Fly.io is managed through a command line app.</p>
-<div class="admonition warning">
-<p class="admonition-title"><strong>Not documented yet.</strong></p>
-</div>
+<h2 id="step-1-create-a-github-account">Step 1: Create a GitHub account<a class="headerlink" href="#step-1-create-a-github-account" title="Permanent link">⌁</a></h2>
+<p>If you don't have a GitHub account <a href="../../../nightscout/github/#create-a-github-account">create one</a> and come back.</p>
+<p></br></br></p>
+<h2 id="step-2-download-flyio-command-line-interface-cli">Step 2: Download fly.io Command Line Interface (CLI)<a class="headerlink" href="#step-2-download-flyio-command-line-interface-cli" title="Permanent link">⌁</a></h2>
+<p>Fly.io is mainly managed through a command line interface (CLI). The first step will be installing the CLI <a href="https://fly.io/docs/flyctl/installing/">which is documented here</a>. </p>
+<p><br></p>
+<h2 id="step-3-create-a-flyio-account">Step 3: Create a fly.io account<a class="headerlink" href="#step-3-create-a-flyio-account" title="Permanent link">⌁</a></h2>
+<p>a) <code>flyct auth signup</code> will begin the signup process, alternatively go to <a href="https://fly.io/app/sign-up">https://fly.io/app/sign-up</a> to login.<br />
+Sign up with Github.</p>
 <p></br></p>
-<h2 id="editing-secrets-in-flyio">Editing Secrets in Fly.io<a class="headerlink" href="#editing-secrets-in-flyio" title="Permanent link">⌁</a></h2>
+<p>b) Authorize Fly.io for GitHub:</p>
+<p><img src="../img/fly.io-github-auth.png" style="zoom:80%;" /></p>
 <p></br></p>
-<div class="admonition warning">
-<p class="admonition-title">Secrets</p>
-<p>You <strong>cannot see the values of your secret variables as they are secret</strong>.<br />
-You can only delete them and set them: you <strong>cannot edit them</strong>.<br />
-Please make sure you write them down somewhere!</p>
-</div>
+<p>c) You don't need to input card information to get Nightscout running so click the <code>Try fly.io for free</code> button:</p>
+<p><img src="../img/try-fly.io-free.png" style="zoom:80%;" /></p>
 <p></br></p>
-<p><strong>Once Nightscout deployed, you need to install <a href="https://fly.io/docs/hands-on/install-flyctl/">flyctl</a> to access your variables in order to change or customize your site.</strong>
-Variables are described <a href="../../../nightscout/setup_variables/#nightscout-config-vars">here</a>.</p>
-<p><a href="https://fly.io/docs/hands-on/sign-in/">Sign in with GitHub</a> in your CLI interface (Powershell/Terminal).<br />
-A new browser will open. Select the entry with your email address.<br />
-If required, authenticate through GitHub.</p>
-<p><img src="../img/FlyM16.png" style="zoom:80%;" /></p>
+<h2 id="step-4-create-an-atlas-account">Step 4: Create an Atlas account<a class="headerlink" href="#step-4-create-an-atlas-account" title="Permanent link">⌁</a></h2>
+<p>Follow <a href="../../../vendors/mongodb/atlas/#create-an-atlas-database">these steps</a> and come back.</p>
+<p></br></br></p>
+<h2 id="step-4-fork-and-deploy-cgm-remote-monitor">Step 4: Fork and deploy cgm-remote-monitor<a class="headerlink" href="#step-4-fork-and-deploy-cgm-remote-monitor" title="Permanent link">⌁</a></h2>
+<p>a) <a href="../../../nightscout/github/#fork-the-nightscout-project">Fork the Nightscout cgm-remote-monitor project</a>.</p>
 <p></br></p>
-<p>Fly.io variables are named <code>Secrets</code> and you cannot visualize them.<br />
-Look <a href="https://fly.io/docs/getting-started/working-with-fly-apps/#working-with-secrets">here</a> for more details.</p>
-<p></br></p>
-<p>If you want to create a new secret or modify an existing one you need to use the <code>flyctl secrets set</code> command.<br />
-For example if you want to set your Nightscout site API Secret to <strong>Th1515MyP455w0rd</strong>, type:</p>
-<pre><code>flyctl secrets set API_SECRET=&quot;Th1515MyP455w0rd&quot; -a yourappname
-</code></pre>
+<p>b) clone the fork locally </p>
+<!-- *Note: this needs documentation.*
+*Using Git / Git Bash is better. Else download the zipped file and extract it in a place you can find back easily.* -->
 
-<p><em>Note: replace <code>yourappname</code> in the example with the real name of your Fly.io Nightscout app.</em></p>
-<p>If your <code>API_SECRET</code> secret was already set to <code>Th1515MyP455w0rd</code> you will see the following message:<br />
-<code>Error No change detected to secrets. Skipping release.</code></p>
-<p>Now put back your original API Secret password with the same command.</p>
+<p></br></p>
+<p>c) Open a terminal and navigate to the directory where you code has been cloned locally</p>
+<!-- *Note: this needs documentation.* -->
+
+<p></br></p>
+<p>d) Deploy Nightscout into fly.io by typing <code>flyctl launch</code></p>
+<div class="admonition note">
+<p class="admonition-title">You're getting into the core setup of your site</p>
+<p>Below you'll see the minimum required configuration, you can modify the variables later in the flyctl command line tool.</p>
+</div>
+<p></br></p>
+<h2 id="step-5-setting-variables">Step 5: Setting Variables<a class="headerlink" href="#step-5-setting-variables" title="Permanent link">⌁</a></h2>
 <p>When changing a secret, the app will automatically redeploy. You will see this sequence (it will take a few minutes):</p>
 <pre><code>Release v1 created
 ==&gt; Monitoring deployment
@@ -1306,6 +1440,129 @@ For example if you want to set your Nightscout site API Secret to <strong>Th1515
 --&gt; v1 deployed successfully
 </code></pre>
 
+<p>Until near the end of this step the CLI will report that you have a critical error because the app doesn't have all the variables it needs to start. Once you see the critical error notification in your terminal you can <code>ctrl-c</code> and exit that command process. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you want to create a new secret or modify an existing one you need to use the <code>flyctl secrets set</code> command.<br />
+For example if you want to set a variable to <strong>Th1515MyP455w0rd</strong>, type:</p>
+<p><code>flyctl secrets set MY_MAD_VARIABLE="Th1515MyP455w0rd" -a yourappname</code></p>
+<p>*Note: replace <code>yourappname</code> in the example with the real name of your Fly.io Nightscout app although this is not always required if working in the directory you've deployed from as it already has that context.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Secrets</p>
+<p>You <strong>cannot see the values of your secret variables as they are secret</strong>.<br />
+You can only delete them and set them: you <strong>cannot edit them</strong>.<br />
+Please make sure you write them down somewhere!</p>
+</div>
+<p></br></p>
+<p>Fly.io variables are named <code>Secrets</code> and you cannot visualize them.<br />
+Look <a href="https://fly.io/docs/getting-started/working-with-fly-apps/#working-with-secrets">here</a> for more details.</p>
+<p></br></p>
+<p>a) <code>API_SECRET</code> will be your Nightscout site password, it needs to be at least 12 characters long and you should <strong>NOT use spaces</strong> if you use @ or ! symbols remember you will probably need to express them using <a href="https://en.wikipedia.org/wiki/Percent-encoding#Percent-encoding_reserved_characters">Percent encoding</a> in your uploader and downloader apps. If you're not sure on how to do this, it is recommended to use only letters (uppercase + lowercase) and digits.</p>
+<div class="admonition warning">
+<p class="admonition-title">The API_SECRET is the <strong>main password allowing full access to your Nightscout site</strong>. Make sure it's reasonably secure (mix uppercase and lowercase letters, plus digits) and <strong>do no not share it publicly</strong>. If you think you exposed it by mistake, it is recommended that you <strong>change it</strong>.</p>
+</div>
+<p>To create secrets in fly.io use the <code>flyctl secrets</code> command. </p>
+<p>To set the <code>API_SECRET</code> type</p>
+<pre><code>flyctl secrets set API_SECRET=MyAPISecret123
+</code></pre>
+
+<p>where <code>MyAPISecret123</code> is your API Secret.</p>
+<p></br></p>
+<p>b) If you want to link your Dexcom Share account as a data source, complete the following lines:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you use a DIY closed loop system it is recommended that you let it upload to Nightscout instead of importing using Dexcom Share and the <code>bridge</code> plugin.</p>
+</div>
+<p></br></p>
+<div class="admonition info">
+<p class="admonition-title">MOST COMMON ERRORS</p>
+<p>The most common error on initial Nightscout setups is that people incorrectly use an old account or an old password. To test your username and password, go to Dexcom's Clarity page (check <a href="https://clarity.dexcom.com">here for USA accounts</a> and <a href="https://clarity.dexcom.eu">here for the others</a>) and try logging in to your Dexcom account. If your account info isn't valid, or you don't see any data in your Clarity account... you need to figure out your actual credentials before moving ahead. See <a href="../../../troubleshoot/dexcom_bridge/">here</a> for troubleshooting tips and information on your Dexcom account.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Password</p>
+<p><em>Some people have had problems with their bridge connecting when their Dexcom passwords are entirely numeric. If you have connection issues in that case, try changing your password to something with a mix of numbers and letters.</em></p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>You need to have at least one follower to use Dexcom Share. See <a href="../../../uploader/setup/#dexcom">here</a>.</p>
+</div>
+<p>There are 3 dexcom share secrets to set:</p>
+<pre><code>1. `BRIDGE_SERVER`: Either `EU` or `US` depending on your Dexcom clarity login.
+2. `BRIDGE_USER_NAME`:  Your Dexcom Clarity username
+3. `BRIDGE_PASSWORD`: Your Dexcom Clarity password
+</code></pre>
+<p>These are formed together into a command that looks like:</p>
+<pre><code>flyctl secrets set BRIDGE_SERVER=&lt;EU|US&gt; BRIDGE_USER_NAME=&lt;MyUserName&gt; BRIDGE_PASSWORD=&lt;MyPassword&gt;
+</code></pre>
+
+<p>where the arguments in the <code>&lt; &gt;</code> are replaced with your credentials. </p>
+<p></br></p>
+<p>c) Set the units to use for Nightscout where acceptable choices are <code>mg/dl</code> or <code>mmol/L</code> (or just <code>mmol</code>). 
+The command is:</p>
+<pre><code>flyctl secrets set DISPLAY_UNITS=&lt;units&gt;
+</code></pre>
+
+<p></br></p>
+<p>d) For the ENABLE variable, copy and paste the following words (separated by a space) so that won't have to think about which you want now:</p>
+<p><code>careportal basal dbsize rawbg iob maker cob bwp cage iage sage boluscalc pushover treatmentnotify loop pump profile food openaps bage alexa override speech cors</code></p>
+<p>If you are using your Dexcom share account as a data source also add bridge at the end, after a space like this:</p>
+<p><code>careportal basal dbsize rawbg iob maker cob bwp cage iage sage boluscalc pushover treatmentnotify loop pump profile food openaps bage alexa override speech cors bridge</code></p>
+<p>Now put that into a secrets command for flyctl:</p>
+<pre><code>flyctl secrets set ENABLE=&quot;careportal basal dbsize rawbg iob maker cob bwp cage iage sage boluscalc pushover treatmentnotify loop pump profile food openaps bage alexa override speech cors bridge&quot;
+</code></pre>
+
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Ensure you have <code>" "</code> surrounding your words to make sure all of it is captured within the variable.</p>
+</div>
+<p></br></p>
+<p>e) Now you need the connection string you defined during the Atlas cluster creation (as the example below, but not the string below). Set the MONGODB_URI with:</p>
+<pre><code>flyctl secrets set MONGODB_URI=&quot;mongodb+srv://nightscout:soo5ecret@cluster0.xxxxx.mongodb.net/mycgmic?retryWrites=true&amp;w=majority&quot;
+</code></pre>
+
+<p>with the URI replaced with the correct string for your Mongo instance. </p>
+<p>Make sure it looks like this one below and NOTE: THERE ARE NO &lt; AND &gt; CHARACTERS:</p>
+<p>mongodb+srv://nightscout:soo5ecret@cluster0.xxxxx.mongodb.net/mycgmic?retryWrites=true&amp;w=majority</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Ensure you have <code>" "</code> surrounding your URI to make sure all of it is captured within the variable.</p>
+</div>
+<p></br></p>
+<h2 id="step-6-nightscout-application-configuration">Step 6: Nightscout Application Configuration<a class="headerlink" href="#step-6-nightscout-application-configuration" title="Permanent link">⌁</a></h2>
+<p>a) Once your site has processed the variables and redeployed itself it will be ready to use. In your fly.io dashboard click on the application (rather than the builder):</p>
+<p><img src="../img/fly.io-dashboard.png" style="zoom:80%;" /></p>
+<p>b) Inside your app you should see that it is running and has a clickable hostname.</p>
+<p><img src="../img/fly.io-application-dashboard.png" style="zoom:80%;" /></p>
+<p>c) Your Nightscout site should now be ready to open and direct you to a new profile creation.</p>
+<p><img src="../../../nightscout/img/NewNS50.png" style="zoom:100%;" /></p>
+<p></br></p>
+<p>d) Setup your <code>Time zone</code> and eventually all other fields. Do not leave any fields empty. If you don't know which value to use, just use the default value. You can change these values later at any time.</p>
+<p><img src="../../../nightscout/img/NewNS44.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>e) Browse down to <code>Authentication status</code> and click <code>Authenticate</code>. Enter your API secret. Click <code>Update</code>.</p>
+<p><img src="../../../nightscout/img/NewNS45.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>f) Click <code>Save</code>.</p>
+<p><img src="../../../nightscout/img/NewNS46.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>g) If the following pop-up shows up click <code>OK</code>, and check status (upper right of the window).</p>
+<p><img src="../../../nightscout/img/NewNS47.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>h) If you need to modify your profile after this, authenticate with the lock icon (top right of the page): enter your API secret. Then click on the hamburger menu and select <code>Profile Editor</code>.</p>
+<p><img src="../../../nightscout/img/NewNS43.png" style="zoom:80%;" /></p>
+<p></br></p>
+<div class="admonition warning">
+<p class="admonition-title">Privacy warning</p>
+<p>Anyone with access to the URL of your Nightscout site, can view your BG and run reports of your data. It it strongly recommended that you enable <a href="../../../nightscout/security">security</a> to your site once you're done with the setup.  </p>
+</div>
+<p></br></p>
+<p>i) Dexcom Share and CareLink users should see data flowing in after some minutes. Other uploaders like xDrip+, Spike, xDrip4iOS, etc will need to be setup with the Nightscout address and API secret in the app.</p>
+<p><img src="../../../nightscout/img/NewNS48.png" style="zoom:80%;" /></p>
+<p></br></br></p>
+<h2 id="step-7-uploader-setup">Step 7: Uploader setup<a class="headerlink" href="#step-7-uploader-setup" title="Permanent link">⌁</a></h2>
+<p></br></p>
+<p>Continue to <a href="../../../uploader/setup/">uploader</a> setup.</p>
 <p></br></p>
                 
               
@@ -1347,13 +1604,13 @@ For example if you want to set your Nightscout site API Secret to <strong>Th1515
       
       
         
-        <a href="../../northflank/new_user/" class="md-footer__link md-footer__link--next" aria-label="Next: Northflank" rel="next">
+        <a href="../migrate/" class="md-footer__link md-footer__link--next" aria-label="Next: Migration to Fly.io" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Northflank
+              Migration to Fly.io
             </div>
           </div>
           <div class="md-footer__button md-icon">
