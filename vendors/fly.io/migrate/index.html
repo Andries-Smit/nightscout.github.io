@@ -520,9 +520,62 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Migration to Fly.io
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Migration to Fly.io
       </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-migrate-your-heroku-app-to-flyio" class="md-nav__link">
+    Step 1 - Migrate your Heroku app to Fly.io
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-remove-the-heroku-webhook-to-flyio" class="md-nav__link">
+    Step 2 - Remove the Heroku webhook to Fly.io
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-backup-your-heroku-variables" class="md-nav__link">
+    Step 3 - Backup your Heroku variables
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-install-flyio-command-line-interface" class="md-nav__link">
+    Step 4 - Install Fly.io command line interface
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1133,6 +1186,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../troubleshoot/northflank/" class="md-nav__link">
+        Northflank
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../troubleshoot/atlas/" class="md-nav__link">
         MongoDB Atlas
       </a>
@@ -1211,6 +1278,42 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-migrate-your-heroku-app-to-flyio" class="md-nav__link">
+    Step 1 - Migrate your Heroku app to Fly.io
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-remove-the-heroku-webhook-to-flyio" class="md-nav__link">
+    Step 2 - Remove the Heroku webhook to Fly.io
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-backup-your-heroku-variables" class="md-nav__link">
+    Step 3 - Backup your Heroku variables
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-install-flyio-command-line-interface" class="md-nav__link">
+    Step 4 - Install Fly.io command line interface
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1225,12 +1328,99 @@
                 <h1 id="migrate-from-heroku-to-flyio-keeping-your-mongodb-atlas-database">Migrate from Heroku to Fly.io keeping your MongoDB Atlas database<a class="headerlink" href="#migrate-from-heroku-to-flyio-keeping-your-mongodb-atlas-database" title="Permanent link">⌁</a></h1>
 <hr />
 <p></br></p>
-<p><span style="font-size:smaller;"><strong>APPLIES TO:</strong></span> <img src="../../../vendors/img/flyio-logo.png" style="zoom:60%;" />+<img src="../../../vendors/img/Atlas.png" style="zoom:80%;" /></p>
-<div class="admonition warning">
-<p class="admonition-title">Do not use the <a href="https://fly.io/launch/heroku">migration wizard</a></p>
-<p>The resulting Nightscout site will probably be impossible to maintain or upgrade.</p>
-</div>
+<p><strong>WORK IN PROGRESS DO NOT USE YET</strong></p>
+<p><img src="../../../img/WIP.png" style="zoom:80%;" /></p>
 <p></br></p>
+<p><span style="font-size:smaller;"><strong>APPLIES TO:</strong></span> <img src="../../../vendors/img/flyio-logo.png" style="zoom:60%;" />+<img src="../../../vendors/img/Atlas.png" style="zoom:80%;" /></p>
+<div class="admonition info">
+<p class="admonition-title">Cost</p>
+</div>
+<p><a href="https://fly.io/">Fly.io</a> states that "Heroku apps fits in our <a href="https://fly.io/docs/about/pricing/#free-tier">free tier</a>".<br />
+While migration is extremely easy, maintenance and upgrades involve CLI and are rather complex.<br />
+Consider <a href="/#nightscout-as-a-service">Nightscout as a service</a> as an option.</p>
+<p></br></p>
+<h2 id="step-1-migrate-your-heroku-app-to-flyio">Step 1 - Migrate your Heroku app to Fly.io<a class="headerlink" href="#step-1-migrate-your-heroku-app-to-flyio" title="Permanent link">⌁</a></h2>
+<p>a) Open the Fly.io Heroku migration page <a href="https://fly.io/launch/heroku">https://fly.io/launch/heroku</a>.</p>
+<p><img src="../img/FlyM01.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>b) Click <code>Sign in to Heroku</code>.</p>
+<p><img src="../img/FlyM02.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>c) Enter your Heroku credentials and <code>Log In</code>.</p>
+<p><img src="../../../update/img/UpdateNS15.png" style="zoom:80%;" ></p>
+<p></br></p>
+<p>d) <code>Allow</code> Fly.io to access your Heroku account.</p>
+<p><img src="../img/FlyM03.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>e) In <code>Configure Heroku</code> you should see your name in the organization.</p>
+<p><img src="../img/FlyM04.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>f) For <code>PICK AN APP NAME</code> put the name of your new Fly.io Nightscout site (you can put the same than Heroku if you want).</p>
+<p><img src="../img/FlyM05.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>g) <a href="https://fly.io/docs/reference/regions/"><code>REGION</code></a> is the physical location closer to you where the app will run. Leave default.</p>
+<p><img src="../img/FlyM06.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>h) The Heroku app you need to choose here is your Heroku Nightscout app.</p>
+<p><img src="../img/FlyM07.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>i) Click <code>Deploy Heroku app!</code></p>
+<p><img src="../img/FlyM08.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>j) You need to enter a physical identification (to demonstrate you're not a robot) this will be done using a credit card.<br />
+Select <code>Click here to add a payment method...</code></p>
+<p><img src="../img/FlyM09.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>k) Enter you credit card information and click <code>Save Card</code>. You will be billed 0$ or a bank fee.</p>
+<p><img src="../img/FlyM10.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>l) You should be driven back to the screen shown on step i.<br />
+If you're not, retry from the beginning and now Fly.io shouldn't ask for a credit card anymore.</p>
+<p>Deploy will start. Be patient and don't click anything until it's complete. It might take up to 20 minutes.</p>
+<p><img src="../img/FlyM11.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>m) When deployment is complete you will see the information of your new Fly.io Nightscout site.<br />
+The App URL is your Nightscout site web address, only it's ending by <code>.fly.io</code> instead of <code>.herokuapp.com</code>.</p>
+<p><img src="../img/FlyM12.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>n) If you open this URL you will see it's replicating real time your Heroku Nightscout with the exact same settings.</p>
+<p></br></p>
+<h2 id="step-2-remove-the-heroku-webhook-to-flyio">Step 2 - Remove the Heroku webhook to Fly.io<a class="headerlink" href="#step-2-remove-the-heroku-webhook-to-flyio" title="Permanent link">⌁</a></h2>
+<p>a) By defaut Fly.io has made a link to Heroku so that whatever happens in Heroku (updates, variables changes, etc...) is mirrored to Fly.io.<br />
+<strong>You don't want this.<br />
+You need to detach Fly.io from Heroku now.</strong></p>
+<p>Log in Heroku <a href="https://id.heroku.com/login">https://id.heroku.com/login</a></p>
+<p><img src="../../../update/img/UpdateNS15.png" style="zoom:80%;" ></p>
+<p></br></p>
+<p>b) Select your Nightscout app, top right <code>More</code>, then <code>View Webhooks</code>.</p>
+<p><img src="../img/FlyM13.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>c) Scroll down to your webhook, open the menu at the end of the line and <code>Remove</code> it.</p>
+<p><img src="../img/FlyM14.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>d) Confirm with <code>Delete</code>.</p>
+<p><img src="../img/FlyM15.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>Your Fly.io Nightscout is now independent from Heroku.</p>
+<p></br></p>
+<h2 id="step-3-backup-your-heroku-variables">Step 3 - Backup your Heroku variables<a class="headerlink" href="#step-3-backup-your-heroku-variables" title="Permanent link">⌁</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Heroku Variables</p>
+<p>You cannot see your variable values in Fly.io.<br />
+You cannot edit them.<br />
+You MUST have a backup of your Heroku variables for maintenance purposes.</p>
+</div>
+<p>Reveal your Heroku Nightscout app <a href="/heroku/new_user/#editing-config-vars-in-heroku">Config Vars</a> and copy all variables names and values in a spreadsheet.</p>
+<p></br></p>
+<h2 id="step-4-install-flyio-command-line-interface">Step 4 - Install Fly.io command line interface<a class="headerlink" href="#step-4-install-flyio-command-line-interface" title="Permanent link">⌁</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Fly.io flyctl</p>
+<p>You MUST be able to use this program in order to maintain your Fly.io Nightscout app.</p>
+</div>
+<p>Follow the example <a href="../new_user/#editing-config-vars-in-flyio">here</a> and confirm you can get it to behave as expected.<br />
+Your Fly.io app name is the one you defined above in step 1.f.</p>
+<p></br></p>
+<p>You have completed Heroku to Fly.io migration.</p>
                 
               
               
