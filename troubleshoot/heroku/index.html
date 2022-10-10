@@ -1212,6 +1212,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#backup-your-site-variables" class="md-nav__link">
+    Backup your site variables
+  </a>
+  
+    <nav class="md-nav" aria-label="Backup your site variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#method-1-spreadsheet" class="md-nav__link">
+    Method 1 - Spreadsheet
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-2-export" class="md-nav__link">
+    Method 2 - Export
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1243,6 +1270,20 @@
     <li class="md-nav__item">
       <a href="../northflank/" class="md-nav__link">
         Northflank
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fly.io/" class="md-nav__link">
+        Fly.io
       </a>
     </li>
   
@@ -1422,6 +1463,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#backup-your-site-variables" class="md-nav__link">
+    Backup your site variables
+  </a>
+  
+    <nav class="md-nav" aria-label="Backup your site variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#method-1-spreadsheet" class="md-nav__link">
+    Method 1 - Spreadsheet
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-2-export" class="md-nav__link">
+    Method 2 - Export
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1439,7 +1507,7 @@
 <p></br></p>
 <h3 id="theres-nothing-here">There's nothing here<a class="headerlink" href="#theres-nothing-here" title="Permanent link">⌁</a></h3>
 <p><img src="../img/TShoot57.png" style="zoom:80%;" ></p>
-<p>If you didn't upgrade Heroku to a hobby plan <a href="../../../vendors/railway/migrate">migrate to Railway</a>.</p>
+<p>If you didn't upgrade Heroku to a hobby plan, you need to <a href="../../nightscout/new_user">create a new Nightscout site</a> and <a href="../atlas/#recover-your-connection-string">recover your MongoDB Atlas connection string</a>.</p>
 <p>If you just tried to deploy a new Nightscout site, something went wrong. Cleanup your Heroku apps and retry...</p>
 <p></br></p>
 <h3 id="application-error">Application Error<a class="headerlink" href="#application-error" title="Permanent link">⌁</a></h3>
@@ -1525,7 +1593,7 @@
 </ul>
 <p></br></p>
 <h2 id="cleanup">Cleanup<a class="headerlink" href="#cleanup" title="Permanent link">⌁</a></h2>
-<p>If you experience issues during deployment you might end up with many apps. Make sure you keep the last one that was functional or delete all before attempting a new deployment. This will just make it easier to find which app you're trying to build. Keeping sleeping apps doesn't have any negative impact but no real advantage unless you do it on purpose.</p>
+<p>If you experience issues during deployment you might end up with many apps. Make sure you keep the last one that was functional or <a href="#delete-an-app">delete</a> all before attempting a new deployment. This will just make it easier to find which app you're trying to build. Keeping sleeping apps doesn't have any negative impact but no real advantage unless you do it on purpose.</p>
 <p>Make sure the app you're using for Nightscout is running on a Hobby tier.</p>
 <p>If you're not convinced you want to delete an app, make sure to put it in maintenance mode to understand if you use it as the related Nightscout site will report offline for maintenance.</p>
 <p></br></p>
@@ -1542,6 +1610,46 @@
 <p><img src="../img/Cleanup01.png" style="zoom:80%;" ></p>
 <p>Copy and paste your app name to confirm deletion, </p>
 <p><img src="../img/Cleanup02.png" style="zoom:80%;" ></p>
+<p></br></p>
+<h2 id="backup-your-site-variables">Backup your site variables<a class="headerlink" href="#backup-your-site-variables" title="Permanent link">⌁</a></h2>
+<p>Having a copy of your variables is very important since some of them are vital to your site like MONGODB_URI and your access to it like API_SECRET.</p>
+<h3 id="method-1-spreadsheet">Method 1 - Spreadsheet<a class="headerlink" href="#method-1-spreadsheet" title="Permanent link">⌁</a></h3>
+<p>Reveal your Heroku Nightscout app <a href="/heroku/new_user/#editing-config-vars-in-heroku">Config Vars</a> and copy all variables names and values in a spreadsheet.</p>
+<h3 id="method-2-export">Method 2 - Export<a class="headerlink" href="#method-2-export" title="Permanent link">⌁</a></h3>
+<p>Log into Heroku, select your app.<br />
+Click on the top right <code>More</code> button and select <code>Run console</code>.</p>
+<p><img src="../../vendors/heroku/img/HerokuM01.png" style="zoom:80%;" ></p>
+<p>In the console command line type the command below, then click <code>Run</code>.</p>
+<pre><code>export `heroku config -s`
+</code></pre>
+
+<p><img src="../../vendors/heroku/img/HerokuM02.png" style="zoom:80%;" ></p>
+<p>Wait until the command completes.</p>
+<p><img src="../../vendors/heroku/img/HerokuM03.png" style="zoom:80%;" ></p>
+<p>Save the session: it contains all your variables and values (and a few useless things).</p>
+<p><img src="../../vendors/heroku/img/HerokuM04.png" style="zoom:80%;" ></p>
+<p>Edit the file with a text editor and remove the first line <code>(bash: line 1: heroku: command not found)</code>.<br />
+Using find and replace, get rid of all <code>declare -x</code>.<br />
+Delete the following Heroku specific variables:  </p>
+<pre><code>DYNO=&quot;run.6309&quot;
+HOME=&quot;/app&quot;
+MEMORY_AVAILABLE=&quot;512&quot;
+NODE_ENV=&quot;production&quot;
+NODE_HOME=&quot;/app/.heroku/node&quot;
+OLDPWD
+PATH=&quot;/app/.heroku/node/bin:/app/.heroku/yarn/bin:/usr/local/bin:/usr/bin:/bin:/app/bin:/app/node_modules/.bin&quot;
+PORT=&quot;6489&quot;
+PS1=&quot;\\[\\033[01;34m\\]\\w\\[\\033[00m\\] \\[\\033[01;32m\\]\$ \\[\\033[00m\\]&quot;
+PWD=&quot;/app&quot;
+SHLVL=&quot;1&quot;
+TERM=&quot;xterm-256color&quot;
+WEB_CONCURRENCY=&quot;1&quot;
+WEB_MEMORY=&quot;512&quot;
+</code></pre>
+
+<div class="admonition warning">
+<p class="admonition-title">Save this file in a safe place.</p>
+</div>
                 
               
               

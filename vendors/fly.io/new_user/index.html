@@ -592,6 +592,26 @@
     Editing Config Vars in Fly.io
   </a>
   
+    <nav class="md-nav" aria-label="Editing Config Vars in Fly.io">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#env-variables" class="md-nav__link">
+    Env variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secrets" class="md-nav__link">
+    Secrets
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1235,6 +1255,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../troubleshoot/fly.io/" class="md-nav__link">
+        Fly.io
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../troubleshoot/atlas/" class="md-nav__link">
         MongoDB Atlas
       </a>
@@ -1380,6 +1414,26 @@
     Editing Config Vars in Fly.io
   </a>
   
+    <nav class="md-nav" aria-label="Editing Config Vars in Fly.io">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#env-variables" class="md-nav__link">
+    Env variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secrets" class="md-nav__link">
+    Secrets
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1397,10 +1451,6 @@
                 
                 <h1 id="flyio-nightscout">Fly.io Nightscout<a class="headerlink" href="#flyio-nightscout" title="Permanent link">⌁</a></h1>
 <p><span style="font-size:smaller;"><strong>APPLIES TO:</strong></span> <img src="../../../vendors/img/flyio-logo.png" style="zoom:60%;" />+<img src="../../../vendors/img/Atlas.png" style="zoom:80%;" /></p>
-<p></br></p>
-<p><strong>WORK IN PROGRESS DO NOT USE</strong></p>
-<p><img src="../../../img/WIP.png" style="zoom:80%;" /></p>
-<p></br></p>
 <div class="admonition info">
 <p class="admonition-title">Cost</p>
 </div>
@@ -1557,9 +1607,26 @@ Type the following command:</p>
 <p></br></p>
 <h2 id="editing-config-vars-in-flyio">Editing Config Vars in Fly.io<a class="headerlink" href="#editing-config-vars-in-flyio" title="Permanent link">⌁</a></h2>
 <p></br></p>
+<p>You will find your Nightscout variables under different forms depending on your deployment method.</p>
+<p>If you migrated using the wizard, they will be secrets.</p>
+<p>If you deployed a new site as explained in this documentation they will be environment variables.</p>
+<p></br></p>
+<h3 id="env-variables">Env variables<a class="headerlink" href="#env-variables" title="Permanent link">⌁</a></h3>
+<p>Environment variables can be viewed with <a href="https://fly.io/docs/hands-on/install-flyctl">flyctl</a> using the following command:</p>
+<pre><code>flyctl config env
+</code></pre>
+
+<p>If you want to modify a configuration variable you need to edit the <code>fly.toml</code> file in your local <code>cgm-remote-monitor</code> copy (the one you created at <a href="#step-6-setting-variables">step 6</a> above).</p>
+<p>Once variable(s) modified, save the file and run the following command (from inside your <code>cgm-remote-monitor</code>).</p>
+<pre><code>flyctl deploy
+</code></pre>
+
+<p></br></p>
+<h3 id="secrets">Secrets<a class="headerlink" href="#secrets" title="Permanent link">⌁</a></h3>
+<p>Your variables are stored as secrets if you used the migration wizard.</p>
 <div class="admonition warning">
 <p class="admonition-title">Secrets</p>
-<p>You <strong>cannot see the values of your variables as they are secret</strong>.<br />
+<p>You <strong>cannot see the values of your secret variables as they are secret</strong>.<br />
 You can only delete them and set them: you <strong>cannot edit them</strong>.<br />
 Please make sure you write them down somewhere!</p>
 </div>
