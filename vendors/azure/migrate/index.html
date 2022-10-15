@@ -1,0 +1,1629 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../../../NS-logo-std.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.6">
+    
+    
+      
+        <title>Migrate to Azure - Nightscout</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.a57b2b03.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#000000">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../../css/admonitions.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent="">
+  
+    
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#migrate-nightscout-from-heroku-to-azure-docker" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+  
+
+<header class="md-header md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Nightscout" class="md-header__button md-logo" aria-label="Nightscout" data-md-component="logo">
+      
+  <img src="../../../NS-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Nightscout
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Migrate to Azure
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        Introduction
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../nightscout/new_user/" class="md-tabs__link md-tabs__link--active">
+        DIY Nightscout
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../nightscout/setup_variables/" class="md-tabs__link">
+        Configure
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../nightscout/discover/" class="md-tabs__link">
+        Use
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../update/update/" class="md-tabs__link">
+        Update
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../troubleshoot/troubleshoot/" class="md-tabs__link">
+        Troubleshoot
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../../translate/" class="md-tabs__link">
+      Translation
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Nightscout" class="md-nav__button md-logo" aria-label="Nightscout" data-md-component="logo">
+      
+  <img src="../../../NS-logo.png" alt="logo">
+
+    </a>
+    Nightscout
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1">
+          Introduction
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Introduction" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Introduction
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        What is Nightscout?
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../uploader/uploaders/" class="md-nav__link">
+        How do I upload my data?
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          DIY Nightscout
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="DIY Nightscout" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          DIY Nightscout
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nightscout/new_user/" class="md-nav__link">
+        Classic DIY Installation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nightscout/github/" class="md-nav__link">
+        GitHub
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mongodb/atlas/" class="md-nav__link">
+        MongoDB Atlas database
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new_user/" class="md-nav__link">
+        Azure
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Migrate to Azure
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Migrate to Azure
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-create-an-azure-account" class="md-nav__link">
+    Step 1: Create an Azure account
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-create-your-nightscout-web-app" class="md-nav__link">
+    Step 2: Create your Nightscout web app
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-configure-your-nightscout-web-app" class="md-nav__link">
+    Step 3: Configure your Nightscout web app
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-update-your-uploaders-and-downloaders" class="md-nav__link">
+    Step 4 - Update your uploaders and downloaders
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 4 - Update your uploaders and downloaders">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#uploaders" class="md-nav__link">
+    Uploaders
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../heroku/new_user/" class="md-nav__link">
+        Heroku Hobby plan
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../railway/new_user/" class="md-nav__link">
+        Railway (method 1)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../railway/new_user2/" class="md-nav__link">
+        Railway (method 2)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../railway/migration/" class="md-nav__link">
+        Migration to Railway
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fly.io/new_user/" class="md-nav__link">
+        Fly.io
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fly.io/migrate/" class="md-nav__link">
+        Migration to Fly.io
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../northflank/new_user/" class="md-nav__link">
+        Northflank
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../northflank/migrate/" class="md-nav__link">
+        Migration to Northflank
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oracle/new_user/" class="md-nav__link">
+        Oracle Cloud
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../google/new_user/" class="md-nav__link">
+        Google Cloud
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MVPS/new_user/" class="md-nav__link">
+        MVPS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../digitalocean/new_user/" class="md-nav__link">
+        Digital Ocean
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../synology/new_user/" class="md-nav__link">
+        Synology NAS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T1Pal/new_user/" class="md-nav__link">
+        NSaaS - T1Pal
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../10BE/" class="md-nav__link">
+        NSaaS - NS10BE
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Configure
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Configure" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Configure
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nightscout/setup_variables/" class="md-nav__link">
+        Configure your Nightscout
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../uploader/setup/" class="md-nav__link">
+        Configure your Uploader
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../uploader/xdripcarelink/" class="md-nav__link">
+        xDrip+ CareLink bridge
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nightscout/downloaders/" class="md-nav__link">
+        Follower Devices
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nightscout/wearable/" class="md-nav__link">
+        Nightscout on your watch
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nightscout/multiadmin/" class="md-nav__link">
+        Running multiple sites
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nightscout/close_loop/" class="md-nav__link">
+        Closed-loop Systems
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Use
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Use" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Use
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nightscout/discover/" class="md-nav__link">
+        Discover your site
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nightscout/security/" class="md-nav__link">
+        Secure your site
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nightscout/reports/" class="md-nav__link">
+        Reports
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nightscout/profile_editor/" class="md-nav__link">
+        Profile Editor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nightscout/admin_tools/" class="md-nav__link">
+        Admin Tools
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nightscout/pushover/" class="md-nav__link">
+        Remote Notifications
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Update
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Update" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Update
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../update/update/" class="md-nav__link">
+        Updating your site
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../update/redeploy/" class="md-nav__link">
+        Redeploying
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../update/dev_branch/" class="md-nav__link">
+        Deploy another GitHub branch
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../heroku/hobbyplan/" class="md-nav__link">
+        Heroku Hobby plan upgrade
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../update/upd_stack/" class="md-nav__link">
+        Heroku Stack Update
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../heroku/" class="md-nav__link">
+        Heroku Multiple Factor Authentication
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../update/downgrade/" class="md-nav__link">
+        Heroku Downgrade
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Troubleshoot
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Troubleshoot" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Troubleshoot
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../troubleshoot/troubleshoot/" class="md-nav__link">
+        Troubleshooting
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../troubleshoot/github/" class="md-nav__link">
+        GitHub
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../troubleshoot/heroku/" class="md-nav__link">
+        Heroku
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../troubleshoot/railway/" class="md-nav__link">
+        Railway
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../troubleshoot/northflank/" class="md-nav__link">
+        Northflank
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../troubleshoot/fly.io/" class="md-nav__link">
+        Fly.io
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../troubleshoot/atlas/" class="md-nav__link">
+        MongoDB Atlas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../troubleshoot/dexcom_bridge/" class="md-nav__link">
+        Dexcom bridge
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../troubleshoot/cleanup/" class="md-nav__link">
+        Cleanup
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/" class="md-nav__link">
+        Translation
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-create-an-azure-account" class="md-nav__link">
+    Step 1: Create an Azure account
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-create-your-nightscout-web-app" class="md-nav__link">
+    Step 2: Create your Nightscout web app
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-configure-your-nightscout-web-app" class="md-nav__link">
+    Step 3: Configure your Nightscout web app
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-update-your-uploaders-and-downloaders" class="md-nav__link">
+    Step 4 - Update your uploaders and downloaders
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 4 - Update your uploaders and downloaders">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#uploaders" class="md-nav__link">
+    Uploaders
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="migrate-nightscout-from-heroku-to-azure-docker">Migrate Nightscout from Heroku to Azure (Docker)<a class="headerlink" href="#migrate-nightscout-from-heroku-to-azure-docker" title="Permanent link">⌁</a></h1>
+<p><span style="font-size:smaller;"><strong>APPLIES TO:</strong></span> <img src="../../../vendors/img/Azure.png" style="zoom:60%;" /></p>
+<p>Yes! Azure is <a href="https://news.microsoft.com/features/open-source-and-the-cloud-changing-the-lives-of-people-with-type-1-diabetes">back</a>!</p>
+<div class="admonition info">
+<p class="admonition-title">Cost</p>
+</div>
+<p>Nightscout is expected to run without charges within free services.</p>
+<p><span style="font-size:larger;">Consider <a href="/#nightscout-as-a-service">Nightscout as a service</a> as an option.</span></p>
+<p></br></p>
+<h2 id="step-1-create-an-azure-account">Step 1: Create an Azure account<a class="headerlink" href="#step-1-create-an-azure-account" title="Permanent link">⌁</a></h2>
+<p>a) Open a web page in <a href="https://azure.microsoft.com/en-us/free/">https://azure.microsoft.com/en-us/free/</a> and click Start Free.</p>
+<p><img src="../img/Azure01.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>b) Sign in with your Microsoft account if you have one, else use GitHub.</p>
+<p><img src="../img/Azure02.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>c) Agree and click Next.<br />
+Perform necessary authentication.</p>
+<p><img src="../img/Azure03.png" style="zoom:80%;" /></p>
+<p></br></p>
+<h2 id="step-2-create-your-nightscout-web-app">Step 2: Create your Nightscout web app<a class="headerlink" href="#step-2-create-your-nightscout-web-app" title="Permanent link">⌁</a></h2>
+<blockquote>
+<p>This is the web page you'll be able to access from any device connected to the internet</p>
+</blockquote>
+<p>a) From the top left ☰ menu or the Azure Services icons, select + Create a resource.</p>
+<p><img src="../img/Azure05.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>b) Search Web app and click Create.</p>
+<p><img src="../img/Azure22.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>c) Check you're still using your Free Trial or 3-Month free Trial.<br />
+Open the list in Resource group and pick your group (the one you created in Step 2.f.).</p>
+<p><img src="../img/Azure23.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>d) Decide your site name (only lowercase and you can use <code>-</code> as a separator).<br />
+It must be unique: check the tick box at the end of the line is green.<br />
+If it isn't: you need to choose another name...</p>
+<p><img src="../img/Azure24.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>e) Now select a Docker container, in Linux.</p>
+<p>Pick a place close to where you live in the Region selection.<br />
+Make sure it is the same than the database region you selected in Step 2.g.</p>
+<p><img src="../img/Azure25.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>f) Change the plan size.</p>
+<p><img src="../img/Azure26.png" style="zoom:80%;" /></p>
+<p>Select Dev /Test, F1 Free and click Apply.</p>
+<p><img src="../img/Azure27.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>g) Click Next: Docker &gt; in the lower left of the page.</p>
+<p><img src="../img/Azure28.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>h) In Image source select Docker Hub.</p>
+<p><img src="../img/Azure29.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>i) In Image and tag paste the following name:</p>
+<pre><code>nightscout/cgm-remote-monitor:latest
+</code></pre>
+
+<p><img src="../img/Azure30.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>j) Click Review + create in the lower left of the page.</p>
+<p><img src="../img/Azure12.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>k) Verify the summary information:<br />
+Free sku<br />
+Check the site Name is what you wanted<br />
+then click Create.</p>
+<p><img src="../img/Azure31.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>Wait for the deployment to complete. Do not interfere.</p>
+<p><img src="../img/Azure33.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>Congratulations, you have created your Nightscout web app.</p>
+<p></br></p>
+<h2 id="step-3-configure-your-nightscout-web-app">Step 3: Configure your Nightscout web app<a class="headerlink" href="#step-3-configure-your-nightscout-web-app" title="Permanent link">⌁</a></h2>
+<blockquote>
+<p>Now you need to copy your variables from Heroku as there is no migration utility to do this...</p>
+</blockquote>
+<p>a) Click Go to resource</p>
+<p><img src="../img/Azure32.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>b) In the left menu select Configuration</p>
+<p><img src="../img/Azure34.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>c) Open a new browser tab or window and Log in <a href="https://id.heroku.com/login">Heroku</a>, select your app</p>
+<p><img src="../../../nightscout/img/SetupNS00.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>d) Click <code>Settings</code></p>
+<p><img src="../../../nightscout/img/SetupNS01.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>e) Scroll down and click <code>Reveal Config Vars</code></p>
+<p><img src="../../../nightscout/img/SetupNS02.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>f) Put the two windows Heroku and Azure side by side</p>
+<p><img src="../img/Azure16.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>Now for every (no, not necessarily, read until <strong>i</strong> and come back) variable you need to do the following:</p>
+<p>g) Click + New application setting</p>
+<p><img src="../img/Azure35.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>h) In Name write the variable name from the first column in Heroku<br />
+Then, in the line below, Value, paste the value from the second column in Heroku.</p>
+<p><img src="../img/Azure38.png" style="zoom:80%;" /></p>
+<p>Then click OK and go for the next one.</p>
+<p></br></p>
+<p>i) You might not need to copy ALL the values, if you know which ones you need you can go ahead.<br />
+If you don't really know which ones you want to copy there's only few that are strictly necessary:</p>
+<p><code>API_SECRET</code><br />
+<code>MONGODB_URI</code><br />
+<code>DISPLAY_UNITS</code></p>
+<p>in <code>ENABLE</code> paste this:</p>
+<p>If you don't use Dexcom Share to get your BG data in Nightscout, copy the line below to Value:</p>
+<pre><code>careportal basal dbsize rawbg iob maker cob bwp cage iage sage boluscalc pushover treatmentnotify loop pump profile food openaps bage alexa override speech cors
+</code></pre>
+
+<p>If you want to use Dexcom Share as a data source copy this one (it includes the keyword <code>bridge</code>):</p>
+<pre><code>careportal basal dbsize rawbg iob maker cob bwp cage iage sage boluscalc pushover treatmentnotify loop pump profile food openaps bage alexa override speech cors bridge
+</code></pre>
+
+<p>If you have your data coming directly from Dexcom share those three:</p>
+<p><code>BRIDGE_USER_NAME</code><br />
+<code>BRIDGE_PASSWORD</code><br />
+<code>BRIDGE_SERVER</code></p>
+<p></br></p>
+<p>j) When you're done copying, click Save, then Continue.</p>
+<p><img src="../img/Azure39.png" style="zoom:80%;" /></p>
+<p></br></p>
+<p>k) From the menu select Overview, then Browse.</p>
+<p><img src="../img/Azure40.png" style="zoom:80%;" /></p>
+<p>It will take some time before the window opens.</p>
+<p></br></p>
+<h2 id="step-4-update-your-uploaders-and-downloaders">Step 4 - Update your uploaders and downloaders<a class="headerlink" href="#step-4-update-your-uploaders-and-downloaders" title="Permanent link">⌁</a></h2>
+<p>Now you will need to update all the devices connected to Nightscout with the new web address.</p>
+<div class="admonition warning">
+<p class="admonition-title">Change the URL!</p>
+<p>Note that Azure will display he same information than Heroku even if you don't do so, but this will stop when Heroku will shutdown the free service.<br />
+<strong>Make sure you update the <a href="../../../uploader/setup/">uploader</a> and <a href="../../../nightscout/downloaders/">follower</a> devices with the new code.run address!</strong></p>
+</div>
+<h4 id="uploaders">Uploaders<a class="headerlink" href="#uploaders" title="Permanent link">⌁</a></h4>
+<p>For Dexcom users, if you use the bridge plugin you should be set.<br />
+xDrip+ users (including Medtronic CareLink followers) should update the uploader as shown <a href="../../../uploader/setup/#xdrip">here</a>.<br />
+xDrip4iOS users <a href="https://xdrip4ios.readthedocs.io/en/latest/connect/cgm/#nightscout-upload">here</a>.<br />
+<a href="https://androidaps.readthedocs.io/en/latest/Configuration/Preferences.html#nsclient">AAPS</a> and <a href="https://loopkit.github.io/loopdocs/operation/loop-settings/services/">Loop</a>: consult the relative documentation to change your site name.</p>
+<p></br></p>
+<p>To fully test your new Azure Nightscout app: put your Heroku app in <a href="../../../troubleshoot/heroku/#maintenance-mode">maintenance mode</a>.<br />
+If things don't go as expected, you can disable it and return to Heroku whilst you fix it.<br />
+<strong>Better test it now than once Heroku will shutdown your app.</strong></p>
+<p></br></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../new_user/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Azure" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Azure
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../heroku/new_user/" class="md-footer__link md-footer__link--next" aria-label="Next: Heroku Hobby plan" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Heroku Hobby plan
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        
+          Made with
+          <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+            Material for MkDocs
+          </a>
+        
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "navigation.top", "search.suggest", "search.highlight", "content.code.annotate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.fcfe8b6d.min.js", "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.b1047164.min.js"></script>
+      
+    
+  </body>
+</html>

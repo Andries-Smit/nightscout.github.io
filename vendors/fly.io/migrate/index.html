@@ -441,6 +441,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../azure/new_user/" class="md-nav__link">
+        Azure
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../azure/migrate/" class="md-nav__link">
+        Migrate to Azure
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../heroku/new_user/" class="md-nav__link">
         Heroku Hobby plan
       </a>
@@ -570,6 +598,26 @@
   <a href="#step-4-install-flyio-command-line-interface" class="md-nav__link">
     Step 4 - Install Fly.io command line interface
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-update-your-uploaders-and-downloaders" class="md-nav__link">
+    Step 5 - Update your uploaders and downloaders
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 5 - Update your uploaders and downloaders">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#uploaders" class="md-nav__link">
+    Uploaders
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1326,6 +1374,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#step-5-update-your-uploaders-and-downloaders" class="md-nav__link">
+    Step 5 - Update your uploaders and downloaders
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 5 - Update your uploaders and downloaders">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#uploaders" class="md-nav__link">
+    Uploaders
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1438,7 +1506,23 @@ You MUST have a backup of your Heroku variables for maintenance purposes.</p>
 <p>Follow the example <a href="../new_user/#editing-config-vars-in-flyio">here</a> and confirm you can get it to behave as expected.<br />
 Your Fly.io app name is the one you defined above in step 1.f.</p>
 <p></br></p>
-<p>You have completed Heroku to Fly.io migration.</p>
+<h2 id="step-5-update-your-uploaders-and-downloaders">Step 5 - Update your uploaders and downloaders<a class="headerlink" href="#step-5-update-your-uploaders-and-downloaders" title="Permanent link">⌁</a></h2>
+<p>Now you will need to update all the devices connected to Nightscout with the new web address.</p>
+<div class="admonition warning">
+<p class="admonition-title">Change the URL!</p>
+<p>Note that Fly.io will display he same information than Heroku even if you don't do so, but this will stop when Heroku will shutdown the free service.<br />
+<strong>Make sure you update the <a href="../../../uploader/setup/">uploader</a> and <a href="../../../nightscout/downloaders/">follower</a> devices with the new code.run address!</strong></p>
+</div>
+<h4 id="uploaders">Uploaders<a class="headerlink" href="#uploaders" title="Permanent link">⌁</a></h4>
+<p>For Dexcom users, if you use the bridge plugin you should be set.<br />
+xDrip+ users (including Medtronic CareLink followers) should update the uploader as shown <a href="../../../uploader/setup/#xdrip">here</a>.<br />
+xDrip4iOS users <a href="https://xdrip4ios.readthedocs.io/en/latest/connect/cgm/#nightscout-upload">here</a>.<br />
+<a href="https://androidaps.readthedocs.io/en/latest/Configuration/Preferences.html#nsclient">AAPS</a> and <a href="https://loopkit.github.io/loopdocs/operation/loop-settings/services/">Loop</a>: consult the relative documentation to change your site name.</p>
+<p></br></p>
+<p>To fully test your new Fly.io Nightscout app: put your Heroku app in <a href="../../../troubleshoot/heroku/#maintenance-mode">maintenance mode</a>.<br />
+If things don't go as expected, you can disable it and return to Heroku whilst you fix it.<br />
+<strong>Better test it now than once Heroku will shutdown your app.</strong></p>
+<p></br></p>
                 
               
               
